@@ -1,7 +1,9 @@
+<app-header>Loading header ... </app-header>
+
 <div class="weatherCurrent">
     <div class="rules">
         <h1>Angular Weather</h1>
-        <p>Привет. Это небольшой виджет с информацией о погоде</p>
+        <p>Это небольшой виджет с информацией о погоде</p>
         <p>Вы можете узнать информацию о погоде, введя в поле для ввода нужный вам город</p>
         <p>Ввод input поддерживается как на Английском, так и Русском языке</p>
     </div>
@@ -24,9 +26,9 @@
         </div>
         
         <div class="weatherWidgetRow" id="currentTemp">{{WeatherData.temp_celcius}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 40px;">MIN: &emsp; {{WeatherData.temp_min}}° / MAX: &emsp; {{WeatherData.temp_max}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 14px; margin-top: 10px;">Feels Like: &emsp; {{WeatherData.temp_feels_like}}°</div>
+        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 40px;">МИН: &emsp; {{WeatherData.temp_min}}° / МАКС: &emsp; {{WeatherData.temp_max}}°</div>
+        <div class="weatherWidgetRow" style="font-size: 14px; margin-top: 10px;">Ощущается как: &emsp; {{WeatherData.temp_feels_like}}°</div>
         <div class="weatherWidgetRow" style="font-size: 42px; margin-top: 86px;">{{WeatherData.name}}</div>
-        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 2px;">Humidity: {{WeatherData.main.humidity}}%</div>
+        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 2px;">Влажность: {{WeatherData.main.humidity}}%</div>
     </div>
 </div>
