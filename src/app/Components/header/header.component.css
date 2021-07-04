@@ -1,9 +1,14 @@
-a{
-    font-size: 26px;
-    color: darkblue;
+body { background: #1abc9c; font-family: 'Lato', sans-serif; text-transform: uppercase; letter-spacing: 2px;}
+ 
+header {
+    color: rgb(255, 255, 255);
 }
 
-nav{
-    text-align: left;
-    padding-left: 48px;
+header.appName{
+    font-size: 64px;
+}
+
+a{
+    font-size: 24px;
+    text-align: center;
 }

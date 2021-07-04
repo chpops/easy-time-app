@@ -6,17 +6,17 @@ import { weatherRouting } from './app.routing';
 import { FormsModule }   from '@angular/forms';
 import { LoginComponent } from './Components/login/login.component';
 import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
-import { TestComponent } from './Components/test/test/test.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { CryptoComponent } from './Components/crypto/crypto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WeatherWidgetComponent,
     HeaderComponent,
-    TestComponent,
     LoginComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    CryptoComponent
   ],
   imports: [
     BrowserModule,

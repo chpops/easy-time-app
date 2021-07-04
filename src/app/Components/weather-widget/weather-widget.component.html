@@ -1,15 +1,15 @@
 <app-header>Loading header ... </app-header>
 
 <div class="weatherCurrent">
-    <div class="rules">
-        <h1>Angular Weather</h1>
+    <div class="info">
+        <h1>Angular Weather Widget</h1>
         <p>Это небольшой виджет с информацией о погоде</p>
         <p>Вы можете узнать информацию о погоде, введя в поле для ввода нужный вам город</p>
         <p>Ввод input поддерживается как на Английском, так и Русском языке</p>
     </div>
 
     <form (submit)="onSubmit()">
-            <input [(ngModel)]="inputCity" class="inputSearch" [ngModelOptions]="{standalone: true}" placeholder="Input name of the city and click Enter ..." title="Введите название города и нажмите Enter">
+            <input [(ngModel)]="inputCity" class="inputSearch" [ngModelOptions]="{standalone: true}" placeholder="Введите название города и нажмите Enter" title="Input name of the city and click Enter">
     </form>
 
     <div class="wwidget">
