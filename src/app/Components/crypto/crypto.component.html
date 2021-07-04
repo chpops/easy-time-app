@@ -1,19 +1,27 @@
 <app-header>Loading header ... </app-header>
 <br>
 
-<script type="text/javascript">
+<div class="crypto-info-form">
+    <div class="info">
+        <h1>Работа с криптовалютой</h1>
+        <p>Небольшой раздел по работе с криптовалютами</p>
+    </div>
+</div>
 
-request('GET', 'https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=ff3b5997-df21-4c28-a187-a07171a2b8dd').then((r1) => {
-  console.log(r1)
-}).catch()
+<div class="input-usd-crypto">
+        <label>Введите сумму в долларах:</label>&nbsp;&nbsp;
+        <input type="text" class="usd-crypto" [(ngModel)]="usdValue" maxlength="8" placeholder="USD (Max Length 8)">
+        <button (click)="usdToBtc()">Перевести</button>
+</div>
 
-request(method, url) {
-    return new Promise(function (resolve, reject) {
-        var xhr = new XMLHttpRequest();
-        xhr.open(method, url);
-        xhr.onload = resolve;
-        xhr.onerror = reject;
-        xhr.send();
-    });
-}
-</script>
+<div class="input-rub-crypto">
+    <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
+    <input type="text" class="rub-crypto" [(ngModel)]="rubValue" maxlength="8" placeholder="RUB (Max Length 8)">
+    <button (click)="rubToBtc()">Перевести</button>
+</div>
+
+<div class="input-eur-crypto">
+    <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
+    <input type="text" class="eur-crypto" [(ngModel)]="eurValue" maxlength="8" placeholder="EUR (Max Length 8)">
+    <button (click)="eurToBtc()">Перевести</button>
+</div>

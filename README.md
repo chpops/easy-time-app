@@ -1,1 +1,1 @@
-# Small Angular Application
+# Easy Time Application

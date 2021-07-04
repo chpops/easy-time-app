@@ -8,6 +8,7 @@ import { LoginComponent } from './Components/login/login.component';
 import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
+import { HttpClientModule }   from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CryptoComponent } from './Components/crypto/crypto.component';
   imports: [
     BrowserModule,
     weatherRouting,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

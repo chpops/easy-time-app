@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-weather-app": {
+    "easy-time-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-weather-app",
+            "outputPath": "dist/easy-time-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-weather-app:build"
+            "browserTarget": "easy-time-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-weather-app:build:production"
+              "browserTarget": "easy-time-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-weather-app:build"
+            "browserTarget": "easy-time-app:build"
           }
         },
         "test": {
@@ -111,16 +111,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-weather-app:serve"
+            "devServerTarget": "easy-time-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-weather-app:serve:production"
+              "devServerTarget": "easy-time-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "angular-weather-app"
+  "defaultProject": "easy-time-app"
 }
