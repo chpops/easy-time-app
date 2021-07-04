@@ -3,3 +3,15 @@
     margin: 24px;
     font-size: 20px;
 }
+
+.input-usd-crypto label{
+    font-size: 26px;
+}
+
+.input-eur-crypto label{
+    font-size: 26px;
+}
+
+.input-rub-crypto label{
+    font-size: 26px;
+}

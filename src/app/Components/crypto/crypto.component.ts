@@ -11,6 +11,7 @@ export class CryptoComponent implements OnInit {
   usdValue: string;
   rubValue: string;
   eurValue: string;
+  lastValues: string;
   getCryptoInfo;
 
   constructor(private http: HttpClient) {}
@@ -35,5 +36,11 @@ export class CryptoComponent implements OnInit {
     this.http.get<any>('https://blockchain.info/tobtc?currency=EUR&value='+this.eurValue).subscribe(data => {
       this.eurValue = data;
     }) 
+  }
+
+  getLast(){
+    this.http.get<any>('https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=ff3b5997-df21-4c28-a187-a07171a2b8dd').subscribe(data => {
+      this.lastValues = data;
+    })
   }
 }

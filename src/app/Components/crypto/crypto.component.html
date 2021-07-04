@@ -4,7 +4,7 @@
 <div class="crypto-info-form">
     <div class="info">
         <h1>Работа с криптовалютой</h1>
-        <p>Небольшой раздел по работе с криптовалютами</p>
+        <p>Раздел находиться в разработке ...</p>
     </div>
 </div>
 
@@ -24,4 +24,9 @@
     <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
     <input type="text" class="eur-crypto" [(ngModel)]="eurValue" maxlength="8" placeholder="EUR (Max Length 8)">
     <button (click)="eurToBtc()">Перевести</button>
+</div>
+
+<div>
+    <textarea type="text" class="last-crypto" [(ngModel)]="lastValues"></textarea>
+    <button (click)="getLast()">Запросить</button>
 </div>
