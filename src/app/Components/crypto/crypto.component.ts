@@ -11,7 +11,12 @@ export class CryptoComponent implements OnInit {
   usdValue: string;
   rubValue: string;
   eurValue: string;
-  lastValues: string;
+  active_cryptocurrencies: number;
+  active_exchanges: number;
+  active_market_pairs: number;
+  total_cryptocurrencies: number;
+  total_exchanges: number;
+  last_updated: string;
   getCryptoInfo;
 
   constructor(private http: HttpClient) {}
@@ -38,9 +43,16 @@ export class CryptoComponent implements OnInit {
     }) 
   }
 
-  getLast(){
+  getCryproInfo(){
     this.http.get<any>('https://pro-api.coinmarketcap.com/v1/global-metrics/quotes/latest?CMC_PRO_API_KEY=ff3b5997-df21-4c28-a187-a07171a2b8dd').subscribe(data => {
-      this.lastValues = data;
+      this.active_cryptocurrencies = data.data.active_cryptocurrencies;
+      this.active_exchanges = data.data.active_exchanges;
+      this.active_market_pairs = data.data.active_market_pairs;
+      this.total_cryptocurrencies = data.data.total_cryptocurrencies;
+      this.total_exchanges = data.data.total_exchanges;
+      this.last_updated = data.data.last_updated;
     })
+    document.getElementById("infoBlocks").style.display = "block";
+
   }
 }

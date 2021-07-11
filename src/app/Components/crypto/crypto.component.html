@@ -11,22 +11,64 @@
 <div class="input-usd-crypto">
         <label>Введите сумму в долларах:</label>&nbsp;&nbsp;
         <input type="text" class="usd-crypto" [(ngModel)]="usdValue" maxlength="8" placeholder="USD (Max Length 8)">
-        <button (click)="usdToBtc()">Перевести</button>
+        <button class="calculate" (click)="usdToBtc()">USD - BTC</button>
 </div>
 
 <div class="input-rub-crypto">
     <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
     <input type="text" class="rub-crypto" [(ngModel)]="rubValue" maxlength="8" placeholder="RUB (Max Length 8)">
-    <button (click)="rubToBtc()">Перевести</button>
+    <button class="calculate" (click)="rubToBtc()">RUB - BTC</button>
 </div>
 
 <div class="input-eur-crypto">
     <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
     <input type="text" class="eur-crypto" [(ngModel)]="eurValue" maxlength="8" placeholder="EUR (Max Length 8)">
-    <button (click)="eurToBtc()">Перевести</button>
+    <button class="calculate" (click)="eurToBtc()">EURO - BTC</button>
 </div>
-
+<br>
 <div>
-    <textarea type="text" class="last-crypto" [(ngModel)]="lastValues"></textarea>
-    <button (click)="getLast()">Запросить</button>
+    <div class="button_cont" align="center">
+        <button class="getCoinInfo" target="_blank" rel="nofollow noopener" (click)="getCryproInfo()">Get Info From Coinmarketcap</button>
+    </div>
+
+    <div class="infoTextArea" id="infoBlocks">
+        <div>
+            <label>Active Cryptocurrencies: </label>
+            <div>
+                <textarea type="text" [(ngModel)]="active_cryptocurrencies" cols="30" rows="1"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <label>Active Exchanges: </label>
+             <div>
+                 <textarea type="text" [(ngModel)]="active_exchanges" cols="30" rows="1"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <label>Active Market Pairs: </label> <div>
+                <textarea type="text" [(ngModel)]="active_market_pairs" cols="30" rows="1"></textarea>
+        </div>
+    </div>
+
+        <div>
+            <label>Total Cryptocurrencies: </label><div>
+                <textarea type="text" [(ngModel)]="total_cryptocurrencies" cols="30" rows="1"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <label>Total Exchanges: </label> 
+            <div>
+                <textarea type="text" [(ngModel)]="total_exchanges" cols="30" rows="1"></textarea>
+            </div>
+        </div>
+        
+        <div>
+            <label>Last Updated: </label> <div>
+                <textarea type="text" [(ngModel)]="last_updated" cols="30" rows="1"></textarea>
+            </div>
+        </div>
+    </div>
 </div>

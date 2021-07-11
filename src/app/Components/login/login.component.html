@@ -1,19 +1,26 @@
-<title>Форма входа</title>
+<html>
+    <head>
+        <title>Форма входа</title>
+    </head>
 
-<form class="loginform">
-    &nbsp;<h2>Введите логин и пароль</h2>&nbsp;&nbsp;
-    
-    <div class="input">
-        <label>Логин:</label>&nbsp;&nbsp;
-        <input type="text" class="username" name="username" [(ngModel)]="username">
-    </div>
+    <body>
 
-    <div class="input">
-        <label>Пароль:</label>&nbsp;&nbsp;
-        <input type="password" class="password" name="password" [(ngModel)]="password">
-    </div>
+    <form class="loginform">
+        &nbsp;<h2>Введите логин и пароль</h2>&nbsp;&nbsp;
+        
+        <div class="input">
+            <label>Логин:</label>&nbsp;&nbsp;
+            <input type="text" class="username" name="username" [(ngModel)]="username">
+        </div>
 
-    <div class="input">
-        <input type="submit" class="loginbutton" value="Login" (click)="loginUser()">
-    </div>
-</form>
+        <div class="input">
+            <label>Пароль:</label>&nbsp;&nbsp;
+            <input type="password" class="password" name="password" [(ngModel)]="password">
+        </div>
+
+        <div class="input">
+            <input type="submit" class="loginbutton" value="Login" (click)="loginUser()">
+        </div>
+    </form>
+        </body>
+</html>

@@ -10,6 +10,7 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
 import { HttpClientModule }   from '@angular/common/http';
 
+
 @NgModule({
   declarations: [
     AppComponent,
