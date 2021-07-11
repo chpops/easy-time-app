@@ -9,6 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
+  "type": "commonjs",
   "private": true,
   "dependencies": {
     "@angular/animations": "~11.1.1",
@@ -19,9 +20,10 @@
     "@angular/platform-browser": "~11.1.1",
     "@angular/platform-browser-dynamic": "~11.1.1",
     "@angular/router": "~11.1.1",
-    "mysql2": "^2.2.5",
+    "mongodb": "^3.6.8",
     "request": "^2.88.2",
     "request-promise": "^4.2.6",
+    "requirejs": "^2.3.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -41,7 +43,6 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
-    "mysql2": "~2.2.5",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
