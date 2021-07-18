@@ -27,10 +27,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/fontawesome/all.js",
-              "src/app/index.js",
-              "src/app/dbConnection.js",
-              "src/app/bodyParser.js"
+              "src/fontawesome/all.js"
             ]
           },
           "configurations": {

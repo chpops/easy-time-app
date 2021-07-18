@@ -14,10 +14,12 @@ export class AuthService {
   authUser(user) {
     let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
+
     return this.http.post(
-      'http://localhost:4200/login',
+      'http://localhost:3000/login',
       user,
-      {headers: headers}).pipe(map((response: any) => response.json()));
+      {headers: headers}).pipe(map((response: any) => response));
+      
   };
 
   storeUser(user){

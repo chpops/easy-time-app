@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,6 +11,7 @@ export class LoginComponent implements OnInit {
 
   login: string;
   password: string;
+  success: boolean;
 
   constructor(
     private router: Router,
@@ -29,12 +29,12 @@ export class LoginComponent implements OnInit {
     };
 
     this.authService.authUser(user).subscribe(data => {
-      if(!data.Success){
-        console.log(data.msg);
-        alert('Ошибка или типа того ...');
+      if(!data.success){
+        console.log(data);
+        alert(data.msg);
       } else {
-        console.log(data.msg);
-        alert('УСПЕХ!');
+        console.log(data);
+        alert(data.msg);
         this.router.navigate(['welcome']);
         this.authService.storeUser(data.user);
       }
