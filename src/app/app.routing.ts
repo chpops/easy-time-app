@@ -5,7 +5,6 @@ import { CryptoComponent } from './Components/crypto/crypto.component';
 import { ModuleWithProviders } from '@angular/core';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
 
-
 const WEATHER_ROUTER:Routes = [
     {path: '', component: LoginComponent},
     {path: 'welcome', component: WelcomeComponent},
