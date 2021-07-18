@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
 
-function dbConnect(){
+function dbConnection(){
     const connectionString = 'mongodb+srv://admin:qwerty123321@mongodev.1kxd9.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
     const client = new MongoClient(connectionString, { 
@@ -16,4 +16,4 @@ function dbConnect(){
     });
 }
 
-module.exports = dbConnect;
+module.exports = dbConnection;
