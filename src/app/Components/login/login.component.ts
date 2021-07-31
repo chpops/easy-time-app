@@ -9,8 +9,11 @@ import { AuthService } from 'src/app/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  login: string;
-  password: string;
+  user = {
+    email : null,
+    password : null  
+  };
+  
   success: boolean;
 
   constructor(
@@ -23,24 +26,14 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser(){
-    const user = {
-      login: this.login,
-      password: this.password
-    };
-
-    this.authService.authUser(user).subscribe(data => {
-      if(!data.success){
-        console.log(data);
-        alert(data.msg);
-      } else {
-        console.log(data);
-        alert(data.msg);
-        this.router.navigate(['welcome']);
-        this.authService.storeUser(data.user);
-      }
-    });
-  };
-}
+    this.authService.authUser(this.user).subscribe(data => {
+      console.log(data);
+      localStorage.setItem('token', data.token);
+      this.router.navigate(['welcome']);
+    })
+    err => console.log(err);
+    }
+  }
 
     
   //   if (this.username == 'admin' && this.password == 'password')
