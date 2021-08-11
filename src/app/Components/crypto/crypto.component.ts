@@ -52,7 +52,6 @@ export class CryptoComponent implements OnInit {
       this.total_exchanges = data.data.total_exchanges;
       this.last_updated = data.data.last_updated;
     })
-    document.getElementById("infoBlocks").style.display = "block";
-
+    // document.getElementById("infoBlocks").style.display = "block";
   }
 }

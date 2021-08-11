@@ -2,16 +2,35 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { User } from "../interfaces";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  // token: any;
 
   private URL = 'http://localhost:4000/api';
   constructor(private http: HttpClient, private router: Router) { }
 
+  register(){}
+    
+    login(user: User): Observable<{token: string}> {
+        return this.http.post<{token: string}>(this.URL + '/login', user);
+    }
+
+    loggedIn() {
+        return !!localStorage.getItem('token');
+    }
+
+    logout() {
+      localStorage.removeItem('token');
+      // this.router.navigate(['/tasks']);
+    }
+  
+    getToken() {
+      return localStorage.getItem('token');
+    }
   authUser(user) {
     // let headers = new HttpHeaders();
     // headers.append('Content-Type', 'application/json');

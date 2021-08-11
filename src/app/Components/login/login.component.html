@@ -5,18 +5,27 @@
     </head>
 
     <body>
-        <form (ngSubmit)="loginUser()" class="loginform">
-            &nbsp;<h2>Введите логин и пароль</h2>&nbsp;&nbsp;
+        <form 
+        class="card"
+        [formGroup] = "form"
+        (ngSubmit)="onSubmit()"
+        >
+            &nbsp;<h2>Введите email и пароль</h2>&nbsp;&nbsp;
             
-            <div class="input">
-                <label>Логин:</label>&nbsp;&nbsp;
-                <input type="text" class="username" name="email" [(ngModel)]="user.email" placeholder="Введите логин">
+            <div class="form-group">
+                <div class="input">
+                    <label>Email:</label>&nbsp;&nbsp;
+                    <input type="email" class="username" name="email" formControlName = "email" placeholder="Введите логин">
+                </div>
             </div>
 
-            <div class="input">
-                <label>Пароль:</label>&nbsp;&nbsp;
-                <input type="password" class="password" name="password" [(ngModel)]="user.password" placeholder="Введите пароль">
+            <div class="form-group">
+                <div class="input">
+                    <label>Пароль:</label>&nbsp;&nbsp;
+                    <input type="password" class="password" name="password" formControlName="password" placeholder="Введите пароль">
+                </div>
             </div>
+
 
             <div class="input">
                 <input type="submit" class="loginbutton" value="Login">
