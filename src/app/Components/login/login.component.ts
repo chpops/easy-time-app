@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
 
@@ -18,14 +18,18 @@ export class LoginComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
-    this.form = new FormGroup({
-      email: new FormControl(null, [Validators.required, Validators.email]),
-      password: new FormControl(null, [Validators.required, Validators.minLength(6)])
-    })  
+    if(this.authService.loggedIn()){
+      this.router.navigate(['/welcome']);
+      console.log('Yeah Boy!! Token: ' + localStorage.getItem('token'));
+    } else{
+      this.form = new FormGroup({
+        email: new FormControl(null, [Validators.required, Validators.email]),
+        password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+      })
+    }  
   }
 
   ngOnDestroy(){

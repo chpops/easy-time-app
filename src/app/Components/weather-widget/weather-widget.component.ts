@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-weather-widget',
@@ -17,14 +19,23 @@ export class WeatherWidgetComponent implements OnInit {
   WeatherData: any;
   currentCity: string;
 
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+  ) { }
 
   ngOnInit(): void {
-    this.WeatherData = {
-      main : {},
-      isDay: true
-    };
-    this.getWeatherData(this.defaultCity);
+    if(this.authService.loggedIn()){
+      console.log('You are logged suka blya ..');
+      this.WeatherData = {
+        main : {},
+        isDay: true
+      };
+      this.getWeatherData(this.defaultCity);
+    } else {
+      this.router.navigate(['/forbidden']);
+      console.log('You are NOT logged! Get away from here!');
+    }
   }
 
   onSubmit(){

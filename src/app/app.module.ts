@@ -10,6 +10,7 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
 import { HttpClientModule }   from '@angular/common/http';
 import { AuthService } from './shared/services/auth.service';
+import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AuthService } from './shared/services/auth.service';
     HeaderComponent,
     LoginComponent,
     WelcomeComponent,
-    CryptoComponent
+    CryptoComponent,
+    ForbiddenComponent
   ],
   imports: [
     BrowserModule,

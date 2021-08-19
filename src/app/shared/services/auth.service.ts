@@ -15,36 +15,20 @@ export class AuthService {
 
   register(){}
     
-    login(user: User): Observable<{token: string}> {
-        return this.http.post<{token: string}>(this.URL + '/login', user);
-    }
+  login(user: User): Observable<{token: string}> {
+      return this.http.post<{token: string}>(this.URL + '/login', user)
+  }
 
-    loggedIn() {
-        return !!localStorage.getItem('token');
-    }
+  loggedIn() {
+      return !!localStorage.getItem('token')
+  }
 
-    logout() {
-      localStorage.removeItem('token');
-      // this.router.navigate(['/tasks']);
-    }
-  
-    getToken() {
-      return localStorage.getItem('token');
-    }
-  authUser(user) {
-    // let headers = new HttpHeaders();
-    // headers.append('Content-Type', 'application/json');
+  logout() {
+    localStorage.removeItem('token')
+    this.router.navigate(['/login'])
+  }
 
-    // return this.http.post(
-    //   'http://localhost:3000/login',
-    //   user,
-    //   {headers: headers}).pipe(map((response: any) => response));
-    return this.http.post<any>(this.URL + '/signin', user);
-  };
-
-  // storeUser(user){
-  //   localStorage.setItem('user', JSON.stringify(user));
-  //   this.user = user;
-  // }
-
+  getToken() {
+    return localStorage.getItem('token')
+  }
 }
