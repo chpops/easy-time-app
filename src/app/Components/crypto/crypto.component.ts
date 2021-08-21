@@ -28,16 +28,16 @@ export class CryptoComponent implements OnInit {
    
   ngOnInit() {
     if(this.authService.loggedIn()){
-      console.log('You are logged suka blya ..');
+      console.log('[CryptoComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
     } else {
+      console.log('[CryptoComponent] - You are NOT logged! Please login!');
       this.router.navigate(['/forbidden']);
-      console.log('You are NOT logged! Get away from here!');
     } 
   }
 
   usdToBtc(){
     this.http.get<any>('https://blockchain.info/tobtc?currency=USD&value='+this.usdValue).subscribe(data => {
-      this.usdValue = data;
+      return this.usdValue = data;
     }) 
   }
 
@@ -62,6 +62,6 @@ export class CryptoComponent implements OnInit {
       this.total_exchanges = data.data.total_exchanges;
       this.last_updated = data.data.last_updated;
     })
-    // document.getElementById("infoBlocks").style.display = "block";
+    document.getElementById("infoBlocks").style.display = "block";
   }
 }

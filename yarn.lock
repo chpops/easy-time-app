@@ -1226,6 +1226,11 @@
   "resolved" "https://registry.npmjs.org/@types/jasmine/-/jasmine-3.6.4.tgz"
   "version" "3.6.4"
 
+"@types/jquery@^2.0.47":
+  "integrity" "sha512-5bidBzyNZ5euxwRjN0UsGsnmCXb6yuNAQkJceJ00Qq7uVLAZ442gJ2I0h56wGfRpIcZyY2wPV103Zq9IMnkjkg=="
+  "resolved" "https://registry.npmjs.org/@types/jquery/-/jquery-2.0.47.tgz"
+  "version" "2.0.47"
+
 "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.6":
   "integrity" "sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA=="
   "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.7.tgz"
@@ -5089,6 +5094,11 @@
     "@types/node" "*"
     "merge-stream" "^2.0.0"
     "supports-color" "^7.0.0"
+
+"jquery@^3.6.0":
+  "integrity" "sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw=="
+  "resolved" "https://registry.npmjs.org/jquery/-/jquery-3.6.0.tgz"
+  "version" "3.6.0"
 
 "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="

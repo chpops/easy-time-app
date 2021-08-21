@@ -4,7 +4,7 @@ const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
-    res.send('Hi Bitch! Your Backend Is Worked Now! ^^')
+    res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3')
 });
 
 router.post('/login', async (req, res) => {
@@ -20,12 +20,11 @@ router.post('/login', async (req, res) => {
 		const token = jwt.sign({_id: user._id, email: user.email, password: user.password, role: user.role }, '0!Wh1_JwH2o3z', {expiresIn: 60 * 60});
 
     if(token){
-      // return res.status(200).json('Bearer ' + token);
       return res.status(200).json({
         token: token
       });
     } else{
-      console.log('Непредвиденная ошибка при генерации JWT токена!');
+      console.log('Непредвиденная ошибка при генерации JWT токена! Текущий токен: ' + token);
     }
 });
 

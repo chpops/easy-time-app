@@ -1,34 +1,31 @@
 <html>
     <head>
-        
         <title>Форма входа</title>
     </head>
 
     <body>
-        <form 
-        class="card"
-        [formGroup] = "form"
-        (ngSubmit)="onSubmit()"
+        <form [formGroup] = "form"
+        (ngSubmit) = "onSubmit()"
         >
             &nbsp;<h2>Введите email и пароль</h2>&nbsp;&nbsp;
             
             <div class="form-group">
                 <div class="input">
                     <label>Email:</label>&nbsp;&nbsp;
-                    <input type="email" class="username" name="email" formControlName = "email" placeholder="Введите логин">
+                    <input type="email" id="email" formControlName = "email" placeholder="Введите логин" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <div class="input">
                     <label>Пароль:</label>&nbsp;&nbsp;
-                    <input type="password" class="password" name="password" formControlName="password" placeholder="Введите пароль">
+                    <input type="password" id="password" formControlName="password" placeholder="Введите пароль" required>
                 </div>
             </div>
 
-
+            
             <div class="input">
-                <input type="submit" class="loginbutton" value="Login">
+                <input type="submit" class="loginbutton" value="Войти">
             </div>
         </form>
     </body>
