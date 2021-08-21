@@ -1,10 +1,17 @@
 const { Router } = require('express');
 const router = Router();
 const User = require('../models/User');
+const Todo = require('../models/Todo');
 const jwt = require('jsonwebtoken');
+
+const todo = new Todo();
 
 router.get('/', (req, res) => {
     res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3')
+});
+
+router.get('/todo', (req, res) => {
+  res.send(todo)
 });
 
 router.post('/login', async (req, res) => {

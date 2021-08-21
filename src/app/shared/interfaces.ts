@@ -4,3 +4,9 @@ export interface User{
     role: string
     token: string
 }
+
+export interface Todo{
+    title: string
+    isCompleted:  boolean
+    list: string
+}

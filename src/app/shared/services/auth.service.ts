@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User } from "../interfaces";
+import { Todo, User } from "../interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +29,9 @@ export class AuthService {
 
   getToken() {
     return localStorage.getItem('token')
+  }
+
+  getTodoList(){
+    return this.http.get(this.URL + '/todo')
   }
 }

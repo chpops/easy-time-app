@@ -17,4 +17,4 @@ const ALL_ROUTER:Routes = [
     {path: 'todo', component: TodoComponent}
 ]
 
-export const weatherRouting:ModuleWithProviders<any> = RouterModule.forRoot(ALL_ROUTER)
+export const AppRouting:ModuleWithProviders<any> = RouterModule.forRoot(ALL_ROUTER)
