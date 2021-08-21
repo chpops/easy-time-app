@@ -6,8 +6,8 @@ Install the dependencies and devDependencies and start the backend server.
 
 ```sh
 cd backend
-npm i
-npm run server
+yarn install
+yarn run server
 ```
 
 Next step start frontend app.
@@ -15,8 +15,8 @@ Next step start frontend app.
 
 ```sh
 cd easy-time-app
-npm i
-npm start
+yarn install
+yarn start
 ```
 
 Verify the deployment by navigating to your address in
