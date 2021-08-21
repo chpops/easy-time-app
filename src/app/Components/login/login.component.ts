@@ -13,6 +13,9 @@ export class LoginComponent implements OnInit {
 
   form : FormGroup = new FormGroup({})
   aSub: Subscription = new Subscription()
+  email: string
+  password: string
+  error: any
 
   constructor(
     private authService: AuthService,
@@ -26,8 +29,8 @@ export class LoginComponent implements OnInit {
     } else{
       console.log('[LoginComponent] - Please login! Input your email and password and submit it!');
       this.form = new FormGroup({
-        email: new FormControl(null, [Validators.required, Validators.email]),
-        password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+        email: new FormControl(null, [Validators.required, Validators.email, Validators.pattern(/[а-яА-ЯёЁa-zA-Z0-9]+$/), Validators.minLength(3), Validators.maxLength(30)]),
+        password: new FormControl(null, [Validators.required, Validators.pattern(/[а-яА-ЯёЁa-zA-Z0-9]+$/), Validators.minLength(1), Validators.maxLength(30)])
       })
     }  
   }
@@ -39,15 +42,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
+      this.form.disable();
       this.aSub = this.authService.login(this.form.value).subscribe(
       res => {
-        this.form.disable();
         localStorage.setItem('token', res.token);
         console.log('[LoginComponent] - You are logged in! Your new token = ' + localStorage.getItem('token'));
         this.router.navigate(['/welcome']);
     },
       err => {
         console.log(err);
+        this.form.enable();
       }
     )
   }

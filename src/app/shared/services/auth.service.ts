@@ -16,7 +16,7 @@ export class AuthService {
     
   login(user: User): Observable<{token: string}> {
       return this.http.post<{token: string}>(this.URL + '/login', user)
-  }
+    }
 
   loggedIn() {
       return !!localStorage.getItem('token')

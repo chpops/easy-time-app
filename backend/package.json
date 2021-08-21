@@ -20,7 +20,8 @@
     "mongoose": "^5.13.7"
   },
   "devDependencies": {
-    "concurrently": "^6.2.0",
-    "nodemon": "^2.0.12"
+    "concurrently": "^6.2.1",
+    "nodemon": "^2.0.12",
+    "yarn-upgrade-all": "^0.5.4"
   }
 }
