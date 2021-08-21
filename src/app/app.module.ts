@@ -11,6 +11,8 @@ import { CryptoComponent } from './Components/crypto/crypto.component';
 import { HttpClientModule }   from '@angular/common/http';
 import { AuthService } from './shared/services/auth.service';
 import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
+import { TodoComponent } from './Components/todo/todo.component';
+import * as $ from 'jquery';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,15 @@ import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
     LoginComponent,
     WelcomeComponent,
     CryptoComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    TodoComponent
   ],
   imports: [
     BrowserModule,
     weatherRouting,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

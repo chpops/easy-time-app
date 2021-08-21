@@ -5,14 +5,16 @@ import { CryptoComponent } from './Components/crypto/crypto.component';
 import { ModuleWithProviders } from '@angular/core';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
+import { TodoComponent } from './Components/todo/todo.component';
 
-const WEATHER_ROUTER:Routes = [
+const ALL_ROUTER:Routes = [
     {path: '', component: LoginComponent},
     {path: 'login', component: LoginComponent},
     {path: 'welcome', component: WelcomeComponent},
     {path: 'weather', component: WeatherWidgetComponent},
     {path: 'crypto', component: CryptoComponent},
-    {path: 'forbidden', component: ForbiddenComponent}
+    {path: 'forbidden', component: ForbiddenComponent},
+    {path: 'todo', component: TodoComponent}
 ]
 
-export const weatherRouting:ModuleWithProviders<any> = RouterModule.forRoot(WEATHER_ROUTER)
+export const weatherRouting:ModuleWithProviders<any> = RouterModule.forRoot(ALL_ROUTER)

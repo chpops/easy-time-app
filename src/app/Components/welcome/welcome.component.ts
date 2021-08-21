@@ -16,11 +16,10 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authService.loggedIn()){
-      console.log('You are logged suka blya ..');
+      console.log('[WelcomeComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
     } else {
       this.router.navigate(['/forbidden']);
-      console.log('You are NOT logged! Get away from here!');
+      console.log('[WelcomeComponent] - You are NOT logged! Get away from here!');
     }
   }
-
 }

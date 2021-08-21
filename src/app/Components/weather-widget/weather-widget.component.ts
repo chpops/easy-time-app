@@ -26,7 +26,7 @@ export class WeatherWidgetComponent implements OnInit {
 
   ngOnInit(): void {
     if(this.authService.loggedIn()){
-      console.log('You are logged suka blya ..');
+      console.log('[WeatherComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
       this.WeatherData = {
         main : {},
         isDay: true
@@ -34,7 +34,7 @@ export class WeatherWidgetComponent implements OnInit {
       this.getWeatherData(this.defaultCity);
     } else {
       this.router.navigate(['/forbidden']);
-      console.log('You are NOT logged! Get away from here!');
+      console.log('[WeatherComponent] - You are NOT logged! Get away from here!');
     }
   }
 

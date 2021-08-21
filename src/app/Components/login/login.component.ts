@@ -13,7 +13,6 @@ export class LoginComponent implements OnInit {
 
   form : FormGroup = new FormGroup({})
   aSub: Subscription = new Subscription()
-  private token = null;
 
   constructor(
     private authService: AuthService,
@@ -23,8 +22,9 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     if(this.authService.loggedIn()){
       this.router.navigate(['/welcome']);
-      console.log('Yeah Boy!! Token: ' + localStorage.getItem('token'));
+      console.log('[LoginComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
     } else{
+      console.log('[LoginComponent] - Please login! Input your email and password and submit it!');
       this.form = new FormGroup({
         email: new FormControl(null, [Validators.required, Validators.email]),
         password: new FormControl(null, [Validators.required, Validators.minLength(6)])
@@ -39,12 +39,11 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(){
-    this.form.disable();
-
-     this.aSub = this.authService.login(this.form.value).subscribe(
+      this.aSub = this.authService.login(this.form.value).subscribe(
       res => {
+        this.form.disable();
         localStorage.setItem('token', res.token);
-        console.log(localStorage.getItem('token'));
+        console.log('[LoginComponent] - You are logged in! Your new token = ' + localStorage.getItem('token'));
         this.router.navigate(['/welcome']);
     },
       err => {

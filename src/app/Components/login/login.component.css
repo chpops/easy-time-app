@@ -1,5 +1,25 @@
 .loginbutton{
-    font-size: 28px;
+    font-size: 24px;
+    height: 72px;
+    width: 200px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 60px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+    letter-spacing: 3px;
+    color: rgb(0, 0, 0);
+}
+
+.loginbutton:hover{
+    font-size: 32px;
+    background: rgb(241, 167, 7);
+    transition: all 0.5s ease 0s;
+    font-weight: bold;
+    letter-spacing: 8px;
 }
 
 input{

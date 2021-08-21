@@ -4,70 +4,69 @@
 <div class="crypto-info-form">
     <div class="info">
         <h1>Работа с криптовалютой</h1>
-        <p>Раздел находиться в разработке ...</p>
     </div>
 </div>
 
 <div class="input-usd-crypto">
         <label>Введите сумму в долларах:</label>&nbsp;&nbsp;
-        <input type="text" class="usd-crypto" [(ngModel)]="usdValue" maxlength="8" placeholder="USD (Max Length 8)">
+        <input type="text" class="usd-crypto" [(ngModel)]="usdValue" minlength="1" maxlength="8" placeholder="USD">
         <button class="calculate" (click)="usdToBtc()">USD - BTC</button>
 </div>
 
 <div class="input-rub-crypto">
     <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
-    <input type="text" class="rub-crypto" [(ngModel)]="rubValue" maxlength="8" placeholder="RUB (Max Length 8)">
+    <input type="text" class="rub-crypto" [(ngModel)]="rubValue" minlength="1" maxlength="8" placeholder="RUB">
     <button class="calculate" (click)="rubToBtc()">RUB - BTC</button>
 </div>
 
 <div class="input-eur-crypto">
     <label>Введите сумму в рублях:</label>&nbsp;&nbsp;
-    <input type="text" class="eur-crypto" [(ngModel)]="eurValue" maxlength="8" placeholder="EUR (Max Length 8)">
+    <input type="text" class="eur-crypto" [(ngModel)]="eurValue" minlength="1" maxlength="8" placeholder="EUR">
     <button class="calculate" (click)="eurToBtc()">EURO - BTC</button>
 </div>
 <br>
+
 <div>
-    <div class="button_cont" align="center">
+    <div class="button_cont">
         <button class="getCoinInfo" target="_blank" rel="nofollow noopener" (click)="getCryproInfo()">Get Info From Coinmarketcap</button>
     </div>
 
     <div class="infoTextArea" id="infoBlocks">
         <div>
-            <label>Active Cryptocurrencies: </label>
+            <label class="ActiveData">Active Cryptocurrencies: </label>
             <div>
-                <textarea type="text" [(ngModel)]="active_cryptocurrencies" cols="30" rows="1"></textarea>
+                <textarea class="activeDataTextArea" type="text" [(ngModel)]="active_cryptocurrencies" cols="30" rows="1" readonly="readonly"></textarea>
+            </div>
+        </div>
+        <div>
+            <label class="ActiveData">Active Exchanges: </label>
+                <div>
+                    <textarea class="activeDataTextArea" type="text" [(ngModel)]="active_exchanges" cols="30" rows="1" readonly="readonly"></textarea>
             </div>
         </div>
 
         <div>
-            <label>Active Exchanges: </label>
-             <div>
-                 <textarea type="text" [(ngModel)]="active_exchanges" cols="30" rows="1"></textarea>
-            </div>
-        </div>
-
-        <div>
-            <label>Active Market Pairs: </label> <div>
-                <textarea type="text" [(ngModel)]="active_market_pairs" cols="30" rows="1"></textarea>
+            <label class="ActiveData">Active Market Pairs: </label> <div>
+                <textarea class="activeDataTextArea" type="text" [(ngModel)]="active_market_pairs" cols="30" rows="1" readonly="readonly"></textarea>
         </div>
     </div>
 
         <div>
-            <label>Total Cryptocurrencies: </label><div>
-                <textarea type="text" [(ngModel)]="total_cryptocurrencies" cols="30" rows="1"></textarea>
+            <label class="ActiveData">Total Cryptocurrencies: </label><div>
+                <textarea class="activeDataTextArea" type="text" [(ngModel)]="total_cryptocurrencies" cols="30" rows="1" readonly="readonly"></textarea>
             </div>
         </div>
 
         <div>
-            <label>Total Exchanges: </label> 
+            <label class="ActiveData">Total Exchanges: </label> 
             <div>
-                <textarea type="text" [(ngModel)]="total_exchanges" cols="30" rows="1"></textarea>
+                <textarea class="activeDataTextArea" type="text" [(ngModel)]="total_exchanges" cols="30" rows="1" readonly="readonly"></textarea>
             </div>
         </div>
         
         <div>
-            <label>Last Updated: </label> <div>
-                <textarea type="text" [(ngModel)]="last_updated" cols="30" rows="1"></textarea>
+            <label class="ActiveData">Last Updated: </label> <div>
+                <textarea class="activeDataTextArea" type="text" [(ngModel)]="last_updated" cols="30" rows="1" readonly="readonly"></textarea>
             </div>
         </div>
     </div>
