@@ -7,4 +7,4 @@ const todoSchema = new Schema({
     }
 );
 
-module.exports = model('todo', todoSchema, 'todos');
+module.exports = model('Todo', todoSchema, 'todos');

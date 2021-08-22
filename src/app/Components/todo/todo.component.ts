@@ -11,6 +11,7 @@ import { Todo } from 'src/app/shared/interfaces';
 export class TodoComponent implements OnInit {
 
   todos: Todo[];
+  title: string;
 
   constructor(
     private authService: AuthService,
@@ -21,6 +22,7 @@ export class TodoComponent implements OnInit {
     if(this.authService.loggedIn()){
       console.log('[TodoComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
       this.authService.getTodoList().subscribe((data: Todo[]) => this.todos = data);
+      console.log(this.todos);
     } else {
       this.router.navigate(['/forbidden']);
       console.log('[TodoComponent] - You are NOT logged! Get away from here!');
