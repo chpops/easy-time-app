@@ -18,6 +18,7 @@ router.get('/todo', async (req, res) => {
       console.log(alt);
     }
     return res.status(200).json({todos});
+    console.log(res);
   } 
   else {
     return res.status(404).send('Список ToDo пустой!');

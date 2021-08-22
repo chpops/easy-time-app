@@ -31,7 +31,7 @@ export class AuthService {
     return localStorage.getItem('token')
   }
 
-  getTodoList(){
+  getTodoList() {
     return this.http.get(this.URL + '/todo')
   }
 }

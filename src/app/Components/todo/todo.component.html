@@ -7,7 +7,11 @@
 <form>
     <table class="table table-striped">
             <tbody>
-                    <tr *ngFor="let p of todos" id="trTodo">
+            <tr *ngIf="todos">
+                <td [(ngModel)]="title">{{title}}</td>
+
+            </tr>
+            <!--         <tr *ngFor="let p of todos" id="trTodo"> -->
                 <!--             <td [(ngModel)]="todos">{{p?.title}}</td> -->
                 <!--             <td [(ngModel)]="isCompleted">{{p?.isCompleted}}</td>
                             <td [(ngModel)]="list">{{p?.list}}</td> -->
@@ -15,7 +19,7 @@
                 <!--             <td>
                                 <a [routerLink]="['edit', p.id]" class="btn btn-outline-primary">Изменить</a>
                             </td> -->
-                        </tr>
+                <!--         </tr> -->
                 </tbody>
     </table>
     <!--  <a routerLink="/create" class="btn btn-success btn-lg btn-block" id="addBtn">Добавить</a> -->

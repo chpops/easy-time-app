@@ -18,11 +18,12 @@ export class TodoComponent implements OnInit {
     private router: Router,
   ) { }
 
-  ngOnInit() {
+ngOnInit() {
     if(this.authService.loggedIn()){
       console.log('[TodoComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
       this.authService.getTodoList().subscribe((data: Todo[]) => this.todos = data);
       console.log(this.todos);
+
     } else {
       this.router.navigate(['/forbidden']);
       console.log('[TodoComponent] - You are NOT logged! Get away from here!');
