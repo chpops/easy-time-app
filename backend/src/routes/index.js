@@ -10,8 +10,27 @@ router.get('/', (req, res) => {
     res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3')
 });
 
-router.get('/todo', (req, res) => {
-  res.send(todo)
+router.get('/todo', async (req, res) => {
+  const todos = await Todo.find();
+  const n = await Todo.find().count();
+  // const allTodoList = todos.toString();
+  // console.log(n);
+  // console.log(allTodoList);
+  if(todos){
+    for(i = n; i>=0; i--){
+      alt = todos[i];
+      console.log(alt);
+    }
+    return res.status(200).json({
+      title: todos.title,
+      isCompleted: todos.isCompleted,
+      list: todos.list
+    });
+  } else {
+    return res.status(404).send('Список Todo пустой!');
+  }
+
+
 });
 
 router.post('/login', async (req, res) => {
