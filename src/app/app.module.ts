@@ -13,6 +13,7 @@ import { AuthService } from './shared/services/auth.service';
 import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
 import { TodoComponent } from './Components/todo/todo.component';
 import * as $ from 'jquery';
+import { RegistrationComponent } from './Components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import * as $ from 'jquery';
     WelcomeComponent,
     CryptoComponent,
     ForbiddenComponent,
-    TodoComponent
+    TodoComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

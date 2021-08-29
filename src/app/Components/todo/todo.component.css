@@ -1,0 +1,8 @@
+#todoBlocks{
+    text-align: center;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    display: inline-flexbox;
+    margin-top: 20px;
+    display: none;
+}

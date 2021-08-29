@@ -1,10 +1,25 @@
 const { Router } = require('express');
 const router = Router();
 const User = require('../models/User');
+const Todo = require('../models/Todo');
+
 const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
     res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3')
+});
+
+router.get('/todos', async (req, res) => {
+  const todos = await Todo.find();
+  const n = await Todo.find().count();
+  if(todos){
+    for(i = n; i>=0; i--){
+      alt = todos[i];
+    }
+    return res.status(200).json({ todos });
+  } else {
+    return res.status(404).send('Список Todo пустой!');
+  }
 });
 
 router.post('/login', async (req, res) => {
@@ -28,7 +43,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.post('/register', async (req, res) => {
+router.post('/registration', async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({email: email});
   if (user){
@@ -42,12 +57,8 @@ router.post('/register', async (req, res) => {
         role: 'USER'
       })
 
-      try{
-        await user.save()
-        res.status(201).json(user)
-      } catch(e) {
-        console.log(e.message)
-      }
+      await user.save()
+      res.status(201).json(user) 
   }
 })
 

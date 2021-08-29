@@ -1,5 +1,5 @@
-.loginbutton{
-    font-size: 24px;
+.regbutton{
+    font-size: 22px;
     height: 72px;
     width: 200px;
     text-align: center;
@@ -14,8 +14,8 @@
     color: rgb(0, 0, 0);
 }
 
-.loginbutton:hover{
-    font-size: 30px;
+.regbutton:hover{
+    font-size: 32px;
     background: rgb(241, 167, 7);
     transition: all 0.5s ease 0s;
     font-weight: bold;
