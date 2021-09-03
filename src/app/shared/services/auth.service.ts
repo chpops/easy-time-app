@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { User, Todo } from "../interfaces";
+import { TodoItem, User } from "../interfaces";
 
 @Injectable({
   providedIn: 'root'
@@ -36,8 +36,8 @@ export class AuthService {
     return localStorage.getItem('token')
   }
 
-  getTodosList() {
-    return this.http.get(this.URL + '/todos') 
+  getTodosList(): Observable<{todos: TodoItem[]}> {
+    return this.http.get<{todos: TodoItem[]}>(this.URL + '/todos') 
   }
   
 }

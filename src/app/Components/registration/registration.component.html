@@ -23,19 +23,18 @@
                 </div>
             </div>
 
-            <!-- <div class="form-group">
+            <div class="form-group">
                 <div class="input">
-                    <label>Подтверждение пароля:</label>&nbsp;&nbsp;
+                    <label>Ещё раз пароль:</label>&nbsp;&nbsp;
                     <input type="password" id="password" formControlName="confirmpassword" minlength="1" maxlength="30" placeholder="Введите пароль" required>
                 </div>
-            </div> -->
-
-            
-            <div class="input">
-                <input type="submit" class="regbutton" value="Ок">
             </div>
+
             <br>
-            <a [routerLink]="['/login']">Войти</a>
+            <div layout="row" layout-align="center center" class="materials-button-row">
+                <button mat-raised-button type="submit" class="okey">Подтвердить</button><br>
+                <a mat-raised-button [routerLink]="['/login']">Вернуться на форму входа</a>
+                        </div> 
         </form>
     </body>
 </html>

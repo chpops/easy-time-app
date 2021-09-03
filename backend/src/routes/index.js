@@ -44,8 +44,9 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/registration', async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({email: email});
+  const { email, password, confirmpassword} = req.body;
+  if(password == confirmpassword){
+    const user = await User.findOne({email: email});
   if (user){
     res.status(409).json({
       message: 'Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!'
@@ -60,6 +61,12 @@ router.post('/registration', async (req, res) => {
       await user.save()
       res.status(201).json(user) 
   }
+  }
+  else{
+    res.status(500).json({
+      message: 'confirmpass не равен password'
+    })
+  }  
 })
 
 module.exports = router;

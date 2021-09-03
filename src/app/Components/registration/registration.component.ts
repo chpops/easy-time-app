@@ -15,6 +15,7 @@ export class RegistrationComponent implements OnInit {
   aSub: Subscription = new Subscription()
   email: string
   password: string
+  confirmpassword: string
   error: any
 
   constructor(
@@ -39,15 +40,15 @@ export class RegistrationComponent implements OnInit {
   onSubmit(){
     this.form.disable();
     this.aSub = this.authService.register(this.form.value).subscribe(
-    res => {
-      alert('Поздравляем! \nУчётная запись успешно зарегистрирована. \nПосле нажатия на "ок" - вы будете перенаправлены на страницу входа!');
-      console.log('[RegistrationComponent] - Your registration complete! Lets go login form!');
-      this.router.navigate(['/login']);
-  },
-    err => {
-      console.log(err);
-      this.form.enable();
-    }
-  )
-}
+      res => {
+        alert('Поздравляем! \nУчётная запись успешно зарегистрирована. \nПосле нажатия на "ок" - вы будете перенаправлены на страницу входа!');
+        console.log('[RegistrationComponent] - Your registration complete! Lets go login form!');
+        this.router.navigate(['/login']);
+    },
+      err => {
+        console.log(err);
+        this.form.enable();
+      }
+    )
+  }
 }
