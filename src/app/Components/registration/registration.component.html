@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Форма регистрации</title>
+    </head>
+
+    <body>
+        <form [formGroup] = "form"
+        (ngSubmit) = "onSubmit()"
+        >
+            &nbsp;<h2>Регистрация</h2>&nbsp;&nbsp;
+            
+            <div class="form-group">
+                <div class="input">
+                    <label>Email:</label>&nbsp;&nbsp;
+                    <input type="email" id="email" formControlName="email" minlength="3" maxlength="30" placeholder="Введите логин" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input">
+                    <label>Пароль:</label>&nbsp;&nbsp;
+                    <input type="password" id="password" formControlName="password" minlength="1" maxlength="30" placeholder="Введите пароль" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input">
+                    <label>Ещё раз пароль:</label>&nbsp;&nbsp;
+                    <input type="password" id="password" formControlName="confirmpassword" minlength="1" maxlength="30" placeholder="Введите пароль" required>
+                </div>
+            </div>
+
+            <br>
+            <div layout="row" layout-align="center center" class="materials-button-row">
+                <button mat-raised-button type="submit" class="okey">Подтвердить</button><br>
+                <a mat-raised-button [routerLink]="['/login']">Вернуться на форму входа</a>
+                        </div> 
+        </form>
+    </body>
+</html>

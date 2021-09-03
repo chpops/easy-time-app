@@ -7,7 +7,7 @@
         <form [formGroup] = "form"
         (ngSubmit) = "onSubmit()"
         >
-            &nbsp;<h2>Введите email и пароль</h2>&nbsp;&nbsp;
+            &nbsp;<h2>Авторизация</h2>&nbsp;&nbsp;
             
             <div class="form-group">
                 <div class="input">
@@ -22,11 +22,15 @@
                     <input type="password" id="password" formControlName="password" minlength="1" maxlength="30" placeholder="Введите пароль" required>
                 </div>
             </div>
-
             
-            <div class="input">
-                <input type="submit" class="loginbutton" value="Войти">
-            </div>
+
+               
+                    <div layout="row" layout-align="center center" class="materials-button-row">
+                <button mat-raised-button type="submit">Войти</button>
+                <a mat-raised-button [routerLink]="['/registration']">Регистрация</a>
+                        </div>
+           
+           
         </form>
     </body>
 </html>

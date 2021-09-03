@@ -12,7 +12,12 @@ import { HttpClientModule }   from '@angular/common/http';
 import { AuthService } from './shared/services/auth.service';
 import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
 import { TodoComponent } from './Components/todo/todo.component';
-import * as $ from 'jquery';
+import { RegistrationComponent } from './Components/registration/registration.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialAppModule } from '../ngmaterial.module';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -23,14 +28,20 @@ import * as $ from 'jquery';
     WelcomeComponent,
     CryptoComponent,
     ForbiddenComponent,
-    TodoComponent
+    TodoComponent,
+    RegistrationComponent
   ],
   imports: [
-    BrowserModule,
     weatherRouting,
+    BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    BrowserAnimationsModule,
+    MaterialAppModule,
+    MatInputModule,
+    MatButtonModule,
+    DragDropModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

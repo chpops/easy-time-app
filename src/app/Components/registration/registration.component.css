@@ -1,0 +1,49 @@
+.regbutton{
+    font-size: 22px;
+    height: 72px;
+    width: 200px;
+    text-align: center;
+    background: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 60px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: all 0.5s ease 0s;
+    letter-spacing: 3px;
+    color: rgb(0, 0, 0);
+}
+
+.regbutton:hover{
+    font-size: 32px;
+    background: rgb(241, 167, 7);
+    transition: all 0.5s ease 0s;
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+
+input{
+    text-align: left;
+}
+
+.materials-button-row .mat-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .materials-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .materials-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }
+
+  .okey{
+      font-size: 32px;
+      font-weight: bold;
+      height: 48px;
+  }
