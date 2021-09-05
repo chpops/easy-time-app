@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../../shared/services/auth.service';
@@ -11,7 +11,7 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 
 export class LoginComponent implements OnInit {
-
+  public incidents: any;
   form : FormGroup = new FormGroup({})
   aSub: Subscription = new Subscription()
   email: string
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/welcome']);
     },
       err => {
-        console.log(err);
+        this.incidents = err;
         this.form.enable();
       }
     )

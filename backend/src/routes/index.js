@@ -48,9 +48,7 @@ router.post('/registration', async (req, res) => {
   if(password == confirmpassword){
     const user = await User.findOne({email: email});
   if (user){
-    res.status(409).json({
-      message: 'Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!'
-    })
+    res.status(409).send('Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!');
   } else{
       const user = new User({
         email: email,
@@ -63,9 +61,7 @@ router.post('/registration', async (req, res) => {
   }
   }
   else{
-    res.status(500).json({
-      message: 'confirmpass не равен password'
-    })
+    res.status(500).send('Подтверждение пароля отличается от пароля, попробуйте ещё раз');
   }  
 })
 

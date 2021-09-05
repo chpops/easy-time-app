@@ -20,11 +20,12 @@ header.appName{
   }
   
   .menubutton{
-      margin-left: 820px;
+      text-align: left;
       color: black;
+      margin-left: 30%;
   }
 
   .menubutton button{
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
   }

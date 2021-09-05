@@ -77,3 +77,8 @@ input{
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
   }
+
+  .error{
+    color: red;
+    font-weight: bold;
+  }

@@ -24,8 +24,7 @@
                 <input matInput type="password" placeholder="Подтверждение" id="password" formControlName="confirmpassword" [(ngModel)]="confirmpassword" minlength="3" maxlength="30" required>
             </mat-form-field>
         </div>
-
-        <br>
+        <label class="error" *ngIf="incidents">{{ incidents.error }}</label><br><br>
 
         <div layout="row" layout-align="center center" class="materials-button-row">
             <button mat-raised-button 
