@@ -9,6 +9,7 @@ export enum ListType {
     InProcess = 'process',
     Done = 'done',
 }
+
 export interface TodoItem {
     title: string;
     isCompleted: boolean;
