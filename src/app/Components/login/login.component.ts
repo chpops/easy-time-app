@@ -9,6 +9,7 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   form : FormGroup = new FormGroup({})
@@ -16,6 +17,12 @@ export class LoginComponent implements OnInit {
   email: string
   password: string
   error: any
+  radius: number;
+  color: string;
+  
+  centered = false;
+  disabled = false;
+  unbounded = false;
 
   constructor(
     private authService: AuthService,
@@ -47,6 +54,7 @@ export class LoginComponent implements OnInit {
       res => {
         localStorage.setItem('token', res.token);
         console.log('[LoginComponent] - You are logged in! Your new token = ' + localStorage.getItem('token'));
+        alert('Успешный вход! \n\nПосле нажатия на кнопку "Ок" - вы будете перенаправлены на стартовую страницу приложения! \n\n' + this.form.value.email + ' - Юный Падаван!' + '\nДа прибудет с тобой сила!')
         this.router.navigate(['/welcome']);
     },
       err => {

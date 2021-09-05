@@ -7,7 +7,7 @@ Install the dependencies and devDependencies and start the backend server.
 ```sh
 cd backend
 yarn install
-yarn run server
+yarn server
 ```
 
 Next step start frontend app.
@@ -24,5 +24,5 @@ your preferred browser.
 
 ```sh
 Frontend: http://localhost:4200/
-Backend:  http://localhost:4000/
+Backend API:  http://localhost:4000/
 ```

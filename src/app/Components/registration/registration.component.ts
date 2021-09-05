@@ -9,15 +9,21 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
+
 export class RegistrationComponent implements OnInit {
-  
   form : FormGroup = new FormGroup({})
   aSub: Subscription = new Subscription()
   email: string
   password: string
   confirmpassword: string
   error: any
-
+  radius: number;
+  color: string;
+  
+  centered = false;
+  disabled = false;
+  unbounded = false;
+  
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -41,8 +47,8 @@ export class RegistrationComponent implements OnInit {
     this.form.disable();
     this.aSub = this.authService.register(this.form.value).subscribe(
       res => {
-        alert('Поздравляем! \nУчётная запись успешно зарегистрирована. \nПосле нажатия на "ок" - вы будете перенаправлены на страницу входа!');
         console.log('[RegistrationComponent] - Your registration complete! Lets go login form!');
+        alert('Учётная запись = ' + this.form.value.email + ' успешно зарегистрирована! \n\nПосле нажатия на кнопку "Ок" - вы будете перенаправлены на страницу входа! \n\nПопробуй использовать новые данные для входа.');
         this.router.navigate(['/login']);
     },
       err => {

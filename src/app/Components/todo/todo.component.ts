@@ -4,11 +4,13 @@ import { Subscription } from 'rxjs';
 import { ListType, TodoItem } from 'src/app/shared/interfaces';
 import { Router } from '@angular/router';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
   styleUrls: ['./todo.component.css']
 })
+
 export class TodoComponent implements OnInit {
   aSub: Subscription = new Subscription()
   todos: TodoItem[] = []
@@ -23,8 +25,8 @@ export class TodoComponent implements OnInit {
     if(this.authService.loggedIn()){
       console.log('[TodoComponent] - You are already logged in! Your token = ' + localStorage.getItem('token'));
       this.authService.getTodosList().subscribe(({ todos }) => {
-        this.todos = todos
-      });
+        this.todos = todos;
+      })
     }
     else{
       console.log('[TodoComponent] - You are NOT logged! Please login!');
@@ -44,6 +46,6 @@ export class TodoComponent implements OnInit {
   };
 
   public getList(type: ListType): TodoItem[] {
-    return this.todos.filter(item => item.list === type)
+    return this.todos.filter(item => item.list === type);
   }
 }
