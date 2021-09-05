@@ -4,11 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { HttpClientModule }   from '@angular/common/http';
 import {MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
     imports: [
@@ -17,7 +17,6 @@ import {MatIconModule} from '@angular/material/icon';
         CommonModule, 
         MatInputModule, 
         DragDropModule, 
-        MatProgressSpinnerModule, 
         HttpClientModule, 
         MatRippleModule,
         MatMenuModule,
@@ -29,7 +28,6 @@ import {MatIconModule} from '@angular/material/icon';
         CommonModule, 
         MatInputModule,
         DragDropModule,
-        MatProgressSpinnerModule,
         HttpClientModule,
         MatRippleModule,
         MatMenuModule,
