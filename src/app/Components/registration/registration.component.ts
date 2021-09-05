@@ -41,8 +41,8 @@ export class RegistrationComponent implements OnInit {
     this.form.disable();
     this.aSub = this.authService.register(this.form.value).subscribe(
       res => {
-        alert('Поздравляем! \nУчётная запись успешно зарегистрирована. \nПосле нажатия на "ок" - вы будете перенаправлены на страницу входа!');
         console.log('[RegistrationComponent] - Your registration complete! Lets go login form!');
+        alert('Учётная запись = ' + this.form.value.email + ' успешно зарегистрирована! \n\nПосле нажатия на кнопку "Ок" - вы будете перенаправлены на страницу входа! \n\nПопробуй использовать новые данные для входа.');
         this.router.navigate(['/login']);
     },
       err => {

@@ -2,5 +2,14 @@
 <header>
     <h1 class="appName">EASY TIME APP</h1>
     
-    <nav><a [routerLink]="['/welcome']">MAIN</a>&nbsp; | <a [routerLink]="['/weather']">WEATHER</a>&nbsp;| <a [routerLink]="['/crypto']">CRYPTO</a>&nbsp;| <a [routerLink]="['/todo']">TODO</a>&nbsp;| </nav>
+    <nav>
+        <a [routerLink]="['/welcome']">MAIN</a>&nbsp; | 
+        <a [routerLink]="['/weather']">WEATHER</a>&nbsp;| 
+        <a [routerLink]="['/crypto']">CRYPTO</a>&nbsp;| 
+        <a [routerLink]="['/todo']">TODO</a>&nbsp;| 
+    </nav> 
+
+    <br>
+    
+    <button mat-raised-button (click)="logout()">Logout</button>
 </header>

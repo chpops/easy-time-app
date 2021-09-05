@@ -19,4 +19,4 @@ const ALL_ROUTER:Routes = [
     {path: 'registration', component: RegistrationComponent}
 ]
 
-export const weatherRouting:ModuleWithProviders<any> = RouterModule.forRoot(ALL_ROUTER)
+export const appRouting:ModuleWithProviders<any> = RouterModule.forRoot(ALL_ROUTER)
