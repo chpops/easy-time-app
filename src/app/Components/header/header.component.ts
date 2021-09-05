@@ -8,6 +8,13 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+  radius: number;
+  color: string;
+  
+  centered = false;
+  disabled = false;
+  unbounded = false;
+  
   constructor(
     private authService: AuthService
     ) { }
@@ -20,5 +27,4 @@ export class HeaderComponent implements OnInit {
     console.log('[HeaderComponent] - You are logout now!');
     alert('Вы вышли из кабинета \n\nПосле нажатия на кнопку "Ок" - вы будете перенаправлены на страницу входа!');
   }
-
 }

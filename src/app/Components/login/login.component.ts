@@ -9,6 +9,7 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
 
   form : FormGroup = new FormGroup({})
@@ -16,6 +17,12 @@ export class LoginComponent implements OnInit {
   email: string
   password: string
   error: any
+  radius: number;
+  color: string;
+  
+  centered = false;
+  disabled = false;
+  unbounded = false;
 
   constructor(
     private authService: AuthService,

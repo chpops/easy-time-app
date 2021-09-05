@@ -11,8 +11,8 @@ import { CryptoComponent } from './Components/crypto/crypto.component';
 import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
 import { TodoComponent } from './Components/todo/todo.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
-import { AuthService } from './shared/services/auth.service';
 
+import { AuthService } from './shared/services/auth.service';
 import { appRouting } from './app.routing';
 import { MaterialAppModule } from '../ngmaterial.module';
 

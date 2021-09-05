@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
   templateUrl: './forbidden.component.html',
   styleUrls: ['./forbidden.component.css']
 })
+
 export class ForbiddenComponent implements OnInit {
 
   constructor(
@@ -13,10 +14,10 @@ export class ForbiddenComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    alert('Доступ запрещён!\n\nПросьба пройти авторизацию и попробовать снова.');
   }
 
   mainPageOpen(){
     this.router.navigate(['/login']);
   }
-
 }

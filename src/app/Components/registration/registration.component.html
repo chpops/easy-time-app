@@ -2,7 +2,7 @@
     <form [formGroup] = "form"
     (ngSubmit) = "onSubmit()"
     >
-        &nbsp;<h2>Регистрация</h2>&nbsp;&nbsp;
+        &nbsp;<h2>Форма Регистрации</h2>&nbsp;&nbsp;
         
         <div class="form-control"> 
             <mat-form-field>
@@ -28,8 +28,17 @@
         <br>
 
         <div layout="row" layout-align="center center" class="materials-button-row">
-            <button mat-raised-button [disabled]="!email || !password || !confirmpassword"  type="submit" class="okey">Подтвердить</button><br>
-            <a mat-raised-button [routerLink]="['/login']">Вернуться на форму входа</a>
+            <button mat-raised-button 
+            class="my-ripple-container mat-elevation-z4"
+            matRipple
+            [matRippleCentered]="centered"
+            [matRippleDisabled]="disabled"
+            [matRippleUnbounded]="unbounded"
+            [matRippleRadius]="radius"
+            [matRippleColor]="color"  
+            [disabled]="!email || !password || !confirmpassword"  
+            type="submit">Подтвердить</button><br>
+            <a class="gotologinform" mat-raised-button [routerLink]="['/login']">Вернуться на форму входа</a>
         </div> 
     </form>
 </body>

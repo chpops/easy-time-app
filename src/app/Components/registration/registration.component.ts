@@ -9,15 +9,21 @@ import { AuthService } from '../../shared/services/auth.service';
   templateUrl: './registration.component.html',
   styleUrls: ['./registration.component.css']
 })
+
 export class RegistrationComponent implements OnInit {
-  
   form : FormGroup = new FormGroup({})
   aSub: Subscription = new Subscription()
   email: string
   password: string
   confirmpassword: string
   error: any
-
+  radius: number;
+  color: string;
+  
+  centered = false;
+  disabled = false;
+  unbounded = false;
+  
   constructor(
     private authService: AuthService,
     private router: Router,

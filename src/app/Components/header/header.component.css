@@ -1,12 +1,30 @@
 header {
-    color: rgb(255, 255, 255);
+    color: black;
 }
 
 header.appName{
     font-size: 64px;
 }
 
-a{
-    font-size: 24px;
+.my-ripple-container {
+    cursor: pointer;
     text-align: center;
-}
+    min-width: 64px;
+    line-height: 36px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .menubutton{
+      margin-left: 820px;
+      color: black;
+  }
+
+  .menubutton button{
+    font-size: 24px;
+    font-weight: bold;
+  }

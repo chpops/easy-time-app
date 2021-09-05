@@ -12,10 +12,6 @@ export class WeatherWidgetComponent implements OnInit {
 
   inputCity: string;
   defaultCity: string = 'Moscow';
-  // TODO :: реализовать получение параметра "defaultCity"
-  // TODO :: предварительно вытащив IP пользователя 
-  // TODO :: и с помощью множества открытых api по IP получем неточное местоположение
-  // TODO :: город используем как параметр "defaultCity"
   WeatherData: any;
   currentCity: string;
 

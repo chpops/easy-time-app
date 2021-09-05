@@ -12,8 +12,6 @@
 .forbidden-form p{
     font-size: 36px;
     font-weight: bolder;
-
-
 }
 
 .backbtn{
@@ -21,7 +19,6 @@ height: 120px;
 width: 420px;
 font-size: 26px;
 text-align: center;
-
 background: rgb(241, 167, 7);
 text-transform: uppercase;
 text-decoration: none;

@@ -42,12 +42,6 @@ input{
     width: 120px;
   }
 
-  .okey{
-      font-size: 32px;
-      font-weight: bold;
-      height: 48px;
-  }
-
   .emaillabel{
     font-size: 18px;
   }
@@ -60,4 +54,26 @@ input{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .gotologinform{
+    line-height: 26px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .my-ripple-container {
+    font-size: 32px;
+      font-weight: bold;
+      height: 48px;
+    cursor: pointer;
+    text-align: center;
+    min-width: 64px;
+    line-height: 36px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
   }
