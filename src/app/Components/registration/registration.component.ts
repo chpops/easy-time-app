@@ -11,6 +11,7 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 
 export class RegistrationComponent implements OnInit {
+  public incidents: any;
   form : FormGroup = new FormGroup({})
   aSub: Subscription = new Subscription()
   email: string
@@ -52,7 +53,7 @@ export class RegistrationComponent implements OnInit {
         this.router.navigate(['/login']);
     },
       err => {
-        console.log(err);
+        this.incidents = err;
         this.form.enable();
       }
     )

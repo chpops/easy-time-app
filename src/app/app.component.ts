@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from './Components/loader/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'easy-time-app';
+
+  constructor(
+    public loaderService: LoaderService
+    ) { }
 }
+
