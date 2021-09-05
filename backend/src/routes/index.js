@@ -6,7 +6,9 @@ const Todo = require('../models/Todo');
 const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
-    res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3')
+    setTimeout(() => {
+      res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3');
+    }, 2000);
 });
 
 router.get('/todos', async (req, res) => {
@@ -16,9 +18,13 @@ router.get('/todos', async (req, res) => {
     for(i = n; i>=0; i--){
       alt = todos[i];
     }
-    return res.status(200).json({ todos });
+    setTimeout(() => {
+      return res.status(200).json({ todos });
+    }, 5000);
   } else {
-    return res.status(404).send('Список Todo пустой!');
+    setTimeout(() => {
+      return res.status(404).send('Список Todo пустой!');
+    }, 3000);
   }
 });
 
@@ -27,17 +33,23 @@ router.post('/login', async (req, res) => {
     const user = await User.findOne({email});
 
     if (!user) 
+    setTimeout(() => {
       return res.status(404).send('Пользователь с таким почтовым адресом не найден! Попробуйте изменить email адрес.');
+    }, 2500);
 
     if (user.password !== password) 
+    setTimeout(() => {
       return res.status(401).send('Неправильный пароль! Попробуйте использовать другой пароль.');
+    }, 2500);
 
 		const token = jwt.sign({_id: user._id, email: user.email, password: user.password, role: user.role }, '0!Wh1_JwH2o3z', {expiresIn: 60 * 60});
 
     if(token){
+      setTimeout(() => {
       return res.status(200).json({
         token: token
       });
+    }, 3000);
     } else{
       console.log('Непредвиденная ошибка при генерации JWT токена! Текущий токен: ' + token);
     }
@@ -48,7 +60,9 @@ router.post('/registration', async (req, res) => {
   if(password == confirmpassword){
     const user = await User.findOne({email: email});
   if (user){
-    res.status(409).send('Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!');
+    setTimeout(() => {
+      res.status(409).send('Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!');
+    }, 2500);
   } else{
       const user = new User({
         email: email,
@@ -56,8 +70,11 @@ router.post('/registration', async (req, res) => {
         role: 'USER'
       })
 
-      await user.save()
-      res.status(201).json(user) 
+      await user.save();
+      setTimeout(() => {
+
+        res.status(201).json(user) ;
+      }, 2000);
   }
   }
   else{

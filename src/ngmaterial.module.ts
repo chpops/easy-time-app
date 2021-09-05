@@ -9,6 +9,7 @@ import { HttpClientModule }   from '@angular/common/http';
 import {MatRippleModule} from '@angular/material/core';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
     imports: [
@@ -21,7 +22,8 @@ import {MatIconModule} from '@angular/material/icon';
         HttpClientModule, 
         MatRippleModule,
         MatMenuModule,
-        MatIconModule
+        MatIconModule,
+        MatProgressBarModule
     ],
     exports: [
         MatButtonModule, 
@@ -33,7 +35,8 @@ import {MatIconModule} from '@angular/material/icon';
         HttpClientModule,
         MatRippleModule,
         MatMenuModule,
-        MatIconModule
+        MatIconModule,
+        MatProgressBarModule
     ]
 })
 export class MaterialAppModule { 

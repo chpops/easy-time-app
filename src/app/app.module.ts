@@ -15,6 +15,8 @@ import { RegistrationComponent } from './Components/registration/registration.co
 import { AuthService } from './shared/services/auth.service';
 import { appRouting } from './app.routing';
 import { MaterialAppModule } from '../ngmaterial.module';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './Components/loader/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { MaterialAppModule } from '../ngmaterial.module';
     ReactiveFormsModule, 
     MaterialAppModule
   ],
-  providers: [AuthService],
+  providers: [
+    AuthService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

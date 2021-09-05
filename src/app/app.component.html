@@ -1,5 +1,9 @@
   <body>
     <div class="app">
+      <div *ngIf="loaderService.isLoading | async" class="loadercontainer">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </div>
+      
       <router-outlet></router-outlet>
     </div>
   </body>

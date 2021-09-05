@@ -4,6 +4,7 @@ header {
 
 header.appName{
     font-size: 64px;
+    padding-top: 12px;
 }
 
 .my-ripple-container {
