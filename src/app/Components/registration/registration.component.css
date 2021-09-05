@@ -81,4 +81,5 @@ input{
   .error{
     color: red;
     font-weight: bold;
+    font-size: 18px;
   }

@@ -17,6 +17,7 @@ import { appRouting } from './app.routing';
 import { MaterialAppModule } from '../ngmaterial.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './Components/loader/interceptor.service';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { InterceptorService } from './Components/loader/interceptor.service';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule, 
-    MaterialAppModule
+    MaterialAppModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     AuthService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
