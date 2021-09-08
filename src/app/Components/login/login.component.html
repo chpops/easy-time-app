@@ -9,6 +9,9 @@
                         <mat-label class="emaillabel">Введите Почту</mat-label>
                         <input matInput type="email" placeholder="Email Адрес" id="email" formControlName="email" [(ngModel)]="email" minlength="3" maxlength="30" required>
                     </mat-form-field>
+                    <div class="error" *ngIf="isControlInvalid('email')">
+                        Некорректный формат почты. Введите почту следующего формата: "email@mail.ru".
+                       </div>
         </div>
 
         <div class="form-control">
@@ -16,6 +19,9 @@
                 <mat-label class="passwordlabel">Введите Пароль</mat-label>
                 <input matInput type="password" placeholder="Пароль" id="password" formControlName="password" [(ngModel)]="password" minlength="3" maxlength="30" required>
             </mat-form-field>
+            <div class="error" *ngIf="isControlInvalid('password')">
+                Некорректный пароль. Минимальная длинна пароля 3 символа, максимальная 16.
+               </div>
         </div>
         <label class="error" *ngIf="incidents">{{ incidents.error }}</label><br><br>
 

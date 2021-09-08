@@ -7,16 +7,22 @@
         <div class="form-control"> 
             <mat-form-field>
                 <mat-label class="mylabel">Введите Email</mat-label>
-                <input matInput type="email" placeholder="Почта" id="email" formControlName="email" [(ngModel)]="email" minlength="3" maxlength="30" required>
+                <input matInput type="email" placeholder="Почта" id="email" formControlName="email" [(ngModel)]="email" minlength="3" maxlength="16" required>
             </mat-form-field>
+            <div class="error" *ngIf="isControlInvalid('email')">
+                Некорректный формат почты. Введите почту следующего формата: "email@mail.ru".
+               </div>
         </div>
 
         <div class="form-control"> 
             <mat-form-field>
                 <mat-label class="mylabel">Введите Пароль</mat-label>
-                <input matInput type="password" placeholder="Пароль" id="password" formControlName="password" [(ngModel)]="password" minlength="3" maxlength="30" required>
+                <input matInput type="password" placeholder="Пароль" id="password" formControlName="password" [(ngModel)]="password" minlength="3" maxlength="16" required>
             </mat-form-field>
         </div>
+        <div class="error" *ngIf="isControlInvalid('password')">
+            Некорректный пароль. Минимальная длинна пароля 3 символа, максимальная 16.
+           </div>
 
         <div class="form-control"> 
             <mat-form-field>
@@ -24,7 +30,8 @@
                 <input matInput type="password" placeholder="Подтверждение" id="password" formControlName="confirmpassword" [(ngModel)]="confirmpassword" minlength="3" maxlength="30" required>
             </mat-form-field>
         </div>
-        <label class="error" *ngIf="incidents">{{ incidents.error }}</label><br><br>
+        <label class="error" *ngIf="incidents">{{ incidents.error }}</label>
+        <br><br>
 
         <div layout="row" layout-align="center center" class="materials-button-row">
             <button mat-raised-button 
