@@ -3,14 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { HeaderComponent } from './Components/header/header.component';
-import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
-import { WelcomeComponent } from './Components/welcome/welcome.component';
-import { CryptoComponent } from './Components/crypto/crypto.component';
-import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
-import { TodoComponent } from './Components/todo/todo.component';
-import { RegistrationComponent } from './Components/registration/registration.component';
-
 import { AuthService } from './shared/services/auth.service';
 import { appRouting } from './app.routing';
 import { MaterialAppModule } from '../ngmaterial.module';
@@ -19,18 +11,10 @@ import { InterceptorService } from './Components/loader/interceptor.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { LoginModule } from './modules/login/login.module';
+import { RegistrationModule } from './modules/registration/registration.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    WeatherWidgetComponent,
-    HeaderComponent,
-    WelcomeComponent,
-    CryptoComponent,
-    ForbiddenComponent,
-    TodoComponent,
-    RegistrationComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     appRouting,
     BrowserModule,
@@ -39,6 +23,7 @@ import { LoginModule } from './modules/login/login.module';
     MaterialAppModule,
     MatProgressSpinnerModule,
     LoginModule,
+    RegistrationModule,
   ],
   providers: [
     AuthService,

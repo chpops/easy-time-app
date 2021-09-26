@@ -3,10 +3,10 @@ import { LoginComponent } from './modules/login/component/login.component';
 import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
 import { ModuleWithProviders } from '@angular/core';
-import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { WelcomeComponent } from './modules/welcome/component/welcome.component';
 import { ForbiddenComponent } from './Components/forbidden/forbidden.component';
 import { TodoComponent } from './Components/todo/todo.component';
-import { RegistrationComponent } from './Components/registration/registration.component';
+import { RegistrationComponent } from './modules/registration/component/registration.component';
 
 const ALL_ROUTER: Routes = [
   { path: '', component: LoginComponent },

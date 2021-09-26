@@ -1,0 +1,87 @@
+<div class="registration-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    &nbsp;
+    <h2>Регистрация</h2>
+    &nbsp;&nbsp;
+
+    <div class="form-control">
+      <mat-form-field>
+        <mat-label class="mylabel">Введите почту</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="your@email.ru"
+          id="email"
+          formControlName="email"
+          [(ngModel)]="email"
+          minlength="3"
+          maxlength="30"
+          required
+        />
+      </mat-form-field>
+      <div class="error" *ngIf="isControlInvalid('email')">
+        Некорректный формат email. Введите почту следующего формата:
+        "email@mail.ru".
+      </div>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field>
+        <mat-label class="mylabel">Введите пароль</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="пароль"
+          id="password"
+          formControlName="password"
+          [(ngModel)]="password"
+          minlength="3"
+          maxlength="20"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <div class="error" *ngIf="isControlInvalid('password')">
+      Некорректный пароль. Минимальная длинна пароля 3 символа, максимальная 20.
+    </div>
+
+    <div class="form-control">
+      <mat-form-field>
+        <mat-label class="mylabel">Повторите пароль</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="ещё раз пароль"
+          id="password"
+          formControlName="confirmpassword"
+          [(ngModel)]="confirmpassword"
+          minlength="3"
+          maxlength="20"
+          required
+        />
+      </mat-form-field>
+    </div>
+    <label class="error" *ngIf="incidents">{{ incidents.error }}</label>
+    <br /><br />
+
+    <div layout="row" layout-align="center center" class="materials-button-row">
+      <button
+        mat-raised-button
+        class="my-ripple-container mat-elevation-z4"
+        matRipple
+        [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled"
+        [matRippleUnbounded]="unbounded"
+        [matRippleRadius]="radius"
+        [matRippleColor]="color"
+        [disabled]="!email || !password || !confirmpassword"
+        type="submit"
+      >
+        Подтвердить</button
+      ><br />
+      <a class="gotologinform" mat-raised-button [routerLink]="['/login']"
+        >Вернуться на форму входа</a
+      >
+    </div>
+  </form>
+</div>
