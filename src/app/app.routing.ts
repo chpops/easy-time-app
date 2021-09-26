@@ -1,5 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './Components/login/login.component';
+import { LoginComponent } from './modules/login/component/login.component';
 import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
 import { ModuleWithProviders } from '@angular/core';

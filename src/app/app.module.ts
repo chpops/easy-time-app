@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './Components/header/header.component';
-import { LoginComponent } from './Components/login/login.component';
 import { WeatherWidgetComponent } from './Components/weather-widget/weather-widget.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { CryptoComponent } from './Components/crypto/crypto.component';
@@ -19,12 +18,13 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './Components/loader/interceptor.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
+import { LoginModule } from './modules/login/login.module';
+
 @NgModule({
   declarations: [
     AppComponent,
     WeatherWidgetComponent,
     HeaderComponent,
-    LoginComponent,
     WelcomeComponent,
     CryptoComponent,
     ForbiddenComponent,
@@ -38,6 +38,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     MaterialAppModule,
     MatProgressSpinnerModule,
+    LoginModule,
   ],
   providers: [
     AuthService,
