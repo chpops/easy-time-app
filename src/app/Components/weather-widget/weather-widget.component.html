@@ -1,35 +1,58 @@
-<app-header></app-header>
-<br>
+<div class="weather-form">
+  <app-header></app-header>
 
-<div class="weatherCurrent">
+  <div class="weatherCurrent">
     <div class="info">
-        <h1>Погодный виджет</h1>
-        <p>Это небольшой виджет с информацией о погоде</p>
-        <p>Вы можете узнать информацию о погоде, введя в поле для ввода нужный вам город</p>
-        <p>Ввод input поддерживается как на Английском, так и Русском языке</p>
+      <h1>Погодный виджет</h1>
+      <p>
+        Это небольшой виджет с информацией о погоде. Вы можете узнать
+        информацию, введя в поле для ввода нужный вам город.
+      </p>
+      <label
+        >Ввод input поддерживается как на Английском, так и Русском
+        языке.</label
+      >
     </div>
 
     <form (submit)="onSubmit()">
-            <input [(ngModel)]="inputCity" class="inputSearch" [ngModelOptions]="{standalone: true}" placeholder="Введите название города и нажмите Enter" title="Input name of the city and click Enter">
+      <input
+        [(ngModel)]="inputCity"
+        class="inputSearch"
+        [ngModelOptions]="{ standalone: true }"
+        placeholder="Введите название города и нажмите Enter"
+        title="Input name of the city and click Enter"
+      />
     </form>
 
     <div class="wwidget">
-        <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
-            <i class="fas fa-3x fa-sun sun"></i>
-        </div>
+      <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-3x fa-sun sun"></i>
+      </div>
 
-        <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
-            <i class="fas fa-3x fa-moon moon"></i>
-        </div>
+      <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-3x fa-moon moon"></i>
+      </div>
 
-        <div class="weatherWidgetRow cloudDiv">
-            <i class="fas fa-cloud fa-3x cloud"></i>
-        </div>
-        
-        <div class="weatherWidgetRow" id="currentTemp">{{WeatherData.temp_celcius}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 40px;">МИН: &emsp; {{WeatherData.temp_min}}° / МАКС: &emsp; {{WeatherData.temp_max}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 14px; margin-top: 10px;">Ощущается как: &emsp; {{WeatherData.temp_feels_like}}°</div>
-        <div class="weatherWidgetRow" style="font-size: 42px; margin-top: 86px;">{{WeatherData.name}}</div>
-        <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 2px;">Влажность: {{WeatherData.main.humidity}}%</div>
+      <div class="weatherWidgetRow cloudDiv">
+        <i class="fas fa-cloud fa-3x cloud"></i>
+      </div>
+
+      <div class="weatherWidgetRow" id="currentTemp">
+        {{ WeatherData.temp_celcius }}°
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 40px">
+        МИН: &emsp; {{ WeatherData.temp_min }}° / МАКС: &emsp;
+        {{ WeatherData.temp_max }}°
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 14px; margin-top: 10px">
+        Ощущается как: &emsp; {{ WeatherData.temp_feels_like }}°
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 42px; margin-top: 86px">
+        {{ WeatherData.name }}
+      </div>
+      <div class="weatherWidgetRow" style="font-size: 16px; margin-top: 2px">
+        Влажность: {{ WeatherData.main.humidity }}%
+      </div>
     </div>
+  </div>
 </div>

@@ -1,86 +1,89 @@
-const { Router } = require('express');
+const { Router } = require("express");
 const router = Router();
-const User = require('../models/User');
-const Todo = require('../models/Todo');
-const jwt = require('jsonwebtoken');
+const User = require("../models/User");
+const Todo = require("../models/Todo");
+const jwt = require("jsonwebtoken");
 
-router.get('/', (req, res) => {
-    setTimeout(() => {
-      res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3');
-    }, 1500);
+router.get("/", (req, res) => {
+  res.send("Hi! Your Backend Is UP Now! ^^ Good Luck! <3");
 });
 
-router.get('/todos', async (req, res) => {
+router.get("/todos", async (req, res) => {
   const todos = await Todo.find();
   const n = await Todo.find().count();
-  if(todos){
-    for(i = n; i>=0; i--){
+  if (todos) {
+    for (i = n; i >= 0; i--) {
       alt = todos[i];
     }
-    setTimeout(() => {
-      return res.status(200).json({ todos });
-    }, 2000);
+    return res.status(200).json({ todos });
   } else {
-    setTimeout(() => {
-      return res.status(404).send('Список Todo пустой!');
-    }, 1000);
+    return res.status(404).send("Список Todo пустой!");
   }
 });
 
-router.post('/login', async (req, res) => {
-    const { email, password } = req.body;
-    const user = await User.findOne({email});
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
 
-    if (!user) 
-    setTimeout(() => {
-      return res.status(404).send('Пользователь с таким почтовым адресом не найден! Попробуйте изменить email адрес.');
-    }, 2000);
+  if (!user)
+    return res
+      .status(404)
+      .send(
+        "Пользователь с таким почтовым адресом не найден! Попробуйте изменить email адрес."
+      );
 
-    if (user.password !== password) 
-    setTimeout(() => {
-      return res.status(401).send('Неправильный пароль! Попробуйте использовать другой пароль.');
-    }, 1000);
+  if (user.password !== password)
+    return res
+      .status(401)
+      .send("Неправильный пароль! Попробуйте использовать другой пароль.");
 
-		const token = jwt.sign({_id: user._id, email: user.email, password: user.password, role: user.role }, '0!Wh1_JwH2o3z', {expiresIn: 60 * 60});
+  const token = jwt.sign(
+    {
+      _id: user._id,
+      email: user.email,
+      password: user.password,
+      role: user.role,
+    },
+    "0!Wh1_JwH2o3z",
+    { expiresIn: 60 * 60 }
+  );
 
-    if(token){
-      setTimeout(() => {
-      return res.status(200).json({
-        token: token
-      });
-    }, 1500);
-    } else{
-      setTimeout(() => { console.log('Непредвиденная ошибка при генерации JWT токена! Текущий токен: ' + token), 700 });
-    }
+  if (token) {
+    return res.status(200).json({
+      token: token,
+    });
+  } else {
+    console.log(
+      "Непредвиденная ошибка при генерации JWT токена! Текущий токен: " + token
+    );
+  }
 });
 
-router.post('/registration', async (req, res) => {
-  const { email, password, confirmpassword} = req.body;
-  if(password == confirmpassword){
-    const user = await User.findOne({email: email});
-  if (user){
-    setTimeout(() => {
-      res.status(409).send('Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!');
-    }, 1000);
-  } else{
+router.post("/registration", async (req, res) => {
+  const { email, password, confirmpassword } = req.body;
+  if (password == confirmpassword) {
+    const user = await User.findOne({ email: email });
+    if (user) {
+      res
+        .status(409)
+        .send(
+          "Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!"
+        );
+    } else {
       const user = new User({
         email: email,
         password: password,
-        role: 'USER'
-      })
+        role: "USER",
+      });
 
       await user.save();
-      setTimeout(() => {
-
-        res.status(201).json(user) ;
-      }, 2000);
+      res.status(201).json(user);
+    }
+  } else {
+    res
+      .status(500)
+      .send("Подтверждение пароля отличается от пароля, попробуйте ещё раз");
   }
-  }
-  else{
-    setTimeout(() => {
-      res.status(500).send('Подтверждение пароля отличается от пароля, попробуйте ещё раз');
-    }, 700);
-  }  
-})
+});
 
 module.exports = router;

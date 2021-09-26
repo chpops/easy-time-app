@@ -1,123 +1,134 @@
-.info{
-    text-align: center;
-    margin: 24px;
-    font-size: 20px;
+.info {
+  text-align: center;
+  margin: 24px;
+  font-size: 20px;
 }
 
-.input-usd-crypto{
-    margin: 16px;
+.input-usd-crypto {
+  margin: 16px;
 }
 
-.input-eur-crypto{
-    margin: 16px;
+.input-eur-crypto {
+  margin: 16px;
 }
 
-.input-rub-crypto{
-    margin: 16px;
+.input-rub-crypto {
+  margin: 16px;
 }
 
-.input-usd-crypto label{
-    font-size: 26px;
+.input-usd-crypto label {
+  font-size: 26px;
 }
 
-.input-eur-crypto label{
-    font-size: 26px;
+.input-eur-crypto label {
+  font-size: 26px;
 }
 
-.input-rub-crypto label{
-    font-size: 26px;
+.input-rub-crypto label {
+  font-size: 26px;
 }
 
-.usd-crypto{
-    margin-right: 24px;
-    height: 40px;
-    width: 150px;
+.usd-crypto {
+  margin-right: 24px;
+  height: 40px;
+  width: 150px;
 }
 
-.rub-crypto{
-    margin-right: 24px;
-    height: 40px;
-    width: 150px;
+.rub-crypto {
+  margin-right: 24px;
+  height: 40px;
+  width: 150px;
 }
 
-.eur-crypto{
-    margin-right: 24px;
-    height: 40px;
-    width: 150px;
+.eur-crypto {
+  margin-right: 24px;
+  height: 40px;
+  width: 150px;
 }
 
 .getCoinInfo {
-    font-size: 18px;
-	color: rgb(255, 255, 255) !important;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #18701c;
-	padding: 18px;
-    font-weight: 600;
-	border-radius: 12px;
-    font-weight: bolder;
-	display: inline-block;
-	border: none;
-	letter-spacing: 2px;
-    width: 360px;
-    height: 100px;
-    color: #fcc513;
+  font-size: 18px;
+  color: rgb(255, 255, 255) !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #18701c;
+  padding: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  font-weight: bolder;
+  display: inline-block;
+  border: none;
+  letter-spacing: 2px;
+  width: 360px;
+  height: 100px;
+  color: #fcc513;
 }
 
 .getCoinInfo:hover {
-    font-size: 20px;
-    font-weight: bolder;
-	background: #ff8800;
-    color: #000000 !important;
-	letter-spacing: 6px;
-    border: 3px solid #000000 !important;
-	transition: all 1.65s ease-in-out 0s;
+  font-size: 20px;
+  font-weight: bolder;
+  background: #ff8800;
+  color: #000000 !important;
+  letter-spacing: 6px;
+  border: 3px solid #000000 !important;
+  transition: all 1.65s ease-in-out 0s;
 }
 
-#infoBlocks{
-    text-align: center;
-    font-size: 22px;
-    color: rgb(255, 255, 255);
-    display: inline-flexbox;
-    margin-top: 20px;
-    display: none;
+#infoBlocks {
+  text-align: center;
+  font-size: 22px;
+  color: rgb(255, 255, 255);
+  display: inline-flexbox;
+  margin-top: 20px;
+  display: none;
 }
 
-.calculate{
-    height: 46px;
-    width: 140px;
-    font-size: 18px;
-    text-align: center;
-    
-    color: #fff !important;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #d31212;
-	padding: 18px;
-	border-radius: 10px;
-	display: inline-block;
-	border: none;
-	transition: all 0.4s ease 0s;
+.calculate {
+  height: 46px;
+  width: 140px;
+  font-size: 18px;
+  text-align: center;
+
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #d31212;
+  padding: 18px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
 
 .calculate:hover {
-	background: #18701c;
-    color: rgb(0, 0, 0) !important;
-	letter-spacing: 1px;
-    border: 1px solid #000000 !important;
-	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
-	transition: all 0.4s ease 0s;
+  background: #18701c;
+  color: rgb(0, 0, 0) !important;
+  letter-spacing: 1px;
+  border: 1px solid #000000 !important;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
 
-.ActiveData{
-    font-size: 32px;
-    color: rgb(22, 175, 30);
-    text-shadow: 2px 0 2px #000, 0 2px 2px #000, -2px 0 2px #000, 0 -2px 2px #000;
+.ActiveData {
+  font-size: 32px;
+  color: rgb(22, 175, 30);
+  text-shadow: 2px 0 2px #000, 0 2px 2px #000, -2px 0 2px #000, 0 -2px 2px #000;
 }
 
-.activeDataTextArea{
-    font-size: 20px;
-    font-weight: bolder;
+.activeDataTextArea {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.crypto-form {
+  background-color: rgba(189, 188, 188, 0.699);
+  width: 400px;
+  height: 800px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
 }

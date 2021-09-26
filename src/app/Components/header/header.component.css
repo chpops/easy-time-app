@@ -1,32 +1,47 @@
 header {
-    color: black;
+  color: black;
 }
 
-header.appName{
-    font-size: 64px;
-    padding-top: 12px;
+.appName {
+  font-size: 42px;
+  font-weight: bold;
+  padding-top: 24px;
 }
 
 .my-ripple-container {
-    cursor: pointer;
-    text-align: center;
-    min-width: 64px;
-    line-height: 36px;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  .menubutton{
-      text-align: left;
-      color: black;
-      margin-left: 30%;
-  }
+  cursor: pointer;
+  width: 80px;
+  height: 40px;
+  font-size: 16px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: 9%;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-tap-highlight-color: transparent;
+}
 
-  .menubutton button{
-    font-size: 30px;
-    font-weight: bold;
-  }
+.menubutton {
+  background-color: rgba(189, 188, 188, 0.699);
+  text-align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  padding-left: 12px;
+}
+
+.menubutton button {
+  font-size: 32px;
+  font-weight: bolder;
+  color: rgb(0, 0, 0);
+}
+
+.mat-menu-item {
+  font-weight: bold;
+  font-size: 15px;
+}
