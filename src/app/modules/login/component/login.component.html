@@ -1,0 +1,73 @@
+<div class="login-form">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    &nbsp;
+    <h2>Форма Авторизации</h2>
+    &nbsp;&nbsp;
+
+    <div class="form-control">
+      <mat-form-field>
+        <mat-label class="emaillabel">Введите почту</mat-label>
+        <input
+          matInput
+          type="email"
+          placeholder="your@email.ru"
+          id="email"
+          formControlName="email"
+          [(ngModel)]="email"
+          minlength="3"
+          maxlength="30"
+          required
+        />
+      </mat-form-field>
+      <div class="error" *ngIf="isControlInvalid('email')">
+        Некорректный формат почты. Введите почту следующего формата:
+        "your@email.ru".
+      </div>
+    </div>
+
+    <div class="form-control">
+      <mat-form-field>
+        <mat-label class="passwordlabel">Введите пароль</mat-label>
+        <input
+          matInput
+          type="password"
+          placeholder="Пароль"
+          id="password"
+          formControlName="password"
+          [(ngModel)]="password"
+          minlength="3"
+          maxlength="30"
+          required
+        />
+      </mat-form-field>
+      <div class="error" *ngIf="isControlInvalid('password')">
+        Некорректный пароль. Минимальная длинна пароля 3 символа, максимальная
+        20.
+      </div>
+    </div>
+    <label class="error" *ngIf="incidents">{{ incidents.error }}</label
+    ><br /><br />
+
+    <div layout="row" layout-align="center center" class="materials-button-row">
+      <button
+        mat-raised-button
+        class="my-ripple-container mat-elevation-z4"
+        matRipple
+        [matRippleCentered]="centered"
+        [matRippleDisabled]="disabled"
+        [matRippleUnbounded]="unbounded"
+        [matRippleRadius]="radius"
+        [matRippleColor]="color"
+        [disabled]="!email || !password"
+        type="submit"
+      >
+        Войти
+      </button>
+      <br />
+
+      <a class="reg-button" mat-raised-button [routerLink]="['/registration']"
+        >Регистрация</a
+      >
+    </div>
+  </form>
+</div>
