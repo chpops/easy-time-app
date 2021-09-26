@@ -1,42 +1,42 @@
-.forbidden-form{
-    margin-top: 8px;   
+.forbidden-form {
+  margin-top: 8px;
 }
 
-.forbidden-form h3{
-    font-size: 82px;
-    color: rgb(231, 12, 12);
-    text-shadow: 6px 0 4px #000, 0 -4px 4px #000, -2px 0 2px #000, 0 -2px 3px #000;
-    font-weight: bold;
+.forbidden-form h3 {
+  font-size: 82px;
+  color: rgb(231, 12, 12);
+  text-shadow: 6px 0 4px #000, 0 -4px 4px #000, -2px 0 2px #000, 0 -2px 3px #000;
+  font-weight: bold;
 }
 
-.forbidden-form p{
-    font-size: 36px;
-    font-weight: bolder;
+.forbidden-form p {
+  font-size: 36px;
+  font-weight: bolder;
 }
 
-.backbtn{
-height: 120px;
-width: 420px;
-font-size: 26px;
-text-align: center;
-background: rgb(241, 167, 7);
-text-transform: uppercase;
-text-decoration: none;
-margin-top: 80px;
-border-radius: 30px;
-display: inline-block;
-transition: all 0.4s ease 0s;
-letter-spacing: 1px;
+.backbtn {
+  height: 120px;
+  width: 420px;
+  font-size: 26px;
+  text-align: center;
+  background: rgb(241, 167, 7);
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-top: 80px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  letter-spacing: 1px;
 }
 
 .backbtn:hover {
-    height: 120px;
-    width: 420px;
-    font-size: 30px;
-    font-weight: bolder;
-    background: rgb(32, 206, 9);
-    display: inline-block;
-    letter-spacing: 3px;
-    border: 2px solid #000000 !important;
-    transition: all 0.4s ease 0s;
+  height: 120px;
+  width: 420px;
+  font-size: 30px;
+  font-weight: bolder;
+  background: rgb(32, 206, 9);
+  display: inline-block;
+  letter-spacing: 3px;
+  border: 2px solid #000000 !important;
+  transition: all 0.4s ease 0s;
 }

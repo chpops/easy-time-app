@@ -1,38 +1,43 @@
-
 <header>
-        <h1 class="appName">EASY TIME APP</h1>
+  <h1 class="appName">EASY TIME APP</h1>
 
-        <div class="menubutton"><button mat-icon-button [matMenuTriggerFor]="menu" >
-            <mat-icon>more_vert</mat-icon> MENU
-        </button>
-        </div>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-                <span [routerLink]="['/welcome']">MAIN</span>
-            </button>
+  <div class="menubutton">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon> MENU
+    </button>
+  </div>
 
-            <button mat-menu-item>
-                <span [routerLink]="['/weather']">WEATHER</span>
-            </button>
+  <mat-menu class="menu-items" #menu="matMenu">
+    <button mat-menu-item>
+      <span [routerLink]="['/welcome']">Main Page</span>
+    </button>
 
-            <button mat-menu-item>
-                <span [routerLink]="['/crypto']">CRYPTO</span>
-            </button>
+    <button mat-menu-item>
+      <span [routerLink]="['/weather']">Weather Widget</span>
+    </button>
 
-            <button mat-menu-item>
-                <span [routerLink]="['/todo']">TODO</span>
-            </button>
-        </mat-menu>
-        
-        <br>
-        
-        <button mat-raised-button 
-        class="my-ripple-container mat-elevation-z4"
-        matRipple
-        [matRippleCentered]="centered"
-        [matRippleDisabled]="disabled"
-        [matRippleUnbounded]="unbounded"
-        [matRippleRadius]="radius"
-        [matRippleColor]="color" 
-        (click)="logout()">Logout</button>
+    <button mat-menu-item>
+      <span [routerLink]="['/crypto']">Crypto Calculator</span>
+    </button>
+
+    <button mat-menu-item>
+      <span [routerLink]="['/todo']">ToDo Component</span>
+    </button>
+  </mat-menu>
+
+  <br />
+
+  <button
+    mat-raised-button
+    class="my-ripple-container mat-elevation-z4"
+    matRipple
+    [matRippleCentered]="centered"
+    [matRippleDisabled]="disabled"
+    [matRippleUnbounded]="unbounded"
+    [matRippleRadius]="radius"
+    [matRippleColor]="color"
+    (click)="logout()"
+  >
+    Logout
+  </button>
 </header>

@@ -12,11 +12,10 @@ yarn server
 
 Next step start frontend app.
 
-
 ```sh
 cd easy-time-app
-yarn install
-yarn start
+npm install
+npm start
 ```
 
 Verify the deployment by navigating to your address in
