@@ -14,4 +14,4 @@ app.use(todoRoutes);
 app.use('/api', require('./routes/index'));
 
 app.listen(app.get('port'));
-console.log('Server on port', app.get('port'));
+console.log('Server started on port', app.get('port'));

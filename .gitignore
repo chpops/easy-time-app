@@ -1,46 +1,33 @@
-# System Files
-.DS_STORE
-Thumbs.db
-
 # compiled output
 /dist
 /tmp
 /out-tsc
-/bazel-out
-/integration/bazel/bazel-*
-*.log
-node_modules
 
-# Include when developing application packages.
-pubspec.lock
-.c9
+# dependencies
+/node_modules
+
+# IDEs and editors
+/.idea
 .project
 .classpath
-.idea/
-.devcontainer/*
-!.devcontainer/README.md
+.c9/
 *.launch
-*.sublime-workspace
-!.devcontainer/recommended-devcontainer.json
-!.devcontainer/recommended-Dockerfile
 .settings/
+*.sublime-workspace
+
+# IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.swo
-*.swp
-modules/.settings
-.vimrc
-.nvimrc
 
-# Don't check in secret files
-*secret.js
-
-# Ignore npm/yarn debug log
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
 npm-debug.log
-yarn-error.log
 testem.log
 /typings
 
@@ -48,28 +35,29 @@ testem.log
 /e2e/*.js
 /e2e/*.map
 
-# build-analytics
-.build-analytics
+# System Files
+.DS_Store
+Thumbs.db
 
-# rollup-test output
-/modules/rollup-test/dist/
+# Ignore all text files
+*
+.txt
 
-# User specific bazel settings
-.bazelrc.user
+# Ignore files related to API keys
+.env
 
-# User specific ng-dev settings
-.ng-dev.user*
+# Ignore SASS config files
+.sass - cache
 
-.notes.md
-baseline.json
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
 
-# Ignore .history for the xyz.local-history VSCode extension
-.history
+# Test binary, built with `go test -c`
+*.test
 
-# CLDR data
-tools/gulp-tasks/cldr/cldr-data/
-
-# Husky
-.husky/_
-
-src/env.ts
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out

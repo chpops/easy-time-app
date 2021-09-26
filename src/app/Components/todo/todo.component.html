@@ -1,44 +1,53 @@
 <app-header></app-header>
-<br>
+<br />
 
 <div class="todo-container">
-    <h2>ToDo</h2>
-  
-    <div
-      cdkDropList
-      #todoList="cdkDropList"
-      [cdkDropListData]="todoList"
-      [cdkDropListConnectedTo]="[processList, doneList]"
-      class="todo-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="todo-box" *ngFor="let todo of getList(listTypeEnum.ToDo)" cdkDrag>{{todo.title}}</div>
-    </div>
-  </div>
-                  
-  <div class="process-container">
-    <h2>Processed</h2>
-  
-    <div
-      cdkDropList
-      #processList="cdkDropList"
-      [cdkDropListData]="processList"
-      [cdkDropListConnectedTo]="[todoList, doneList]"
-      class="process-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="process-box" *ngFor="let todo of getList(listTypeEnum.InProcess)" cdkDrag>{{todo.title}}</div>
-    </div>
-  </div>
+  <h2>ToDo</h2>
 
-  <div class="done-container">
-    <h2>Complete</h2>
-  
-    <div
-      cdkDropList
-      #doneList="cdkDropList"
-      [cdkDropListData]="doneList"
-      [cdkDropListConnectedTo]="[todoList, processList]"
-      class="done-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="done-box" *ngFor="let todo of getList(listTypeEnum.Done)" cdkDrag>{{todo.title}}</div>
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="todo"
+    [cdkDropListConnectedTo]="[processList, doneList]"
+    class="todo-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="todo-box" *ngFor="let item of todo" cdkDrag>
+      {{ item.title }}
     </div>
   </div>
+</div>
+
+<div class="process-container">
+  <h2>Processed</h2>
+
+  <div
+    cdkDropList
+    #processList="cdkDropList"
+    [cdkDropListData]="process"
+    [cdkDropListConnectedTo]="[todoList, doneList]"
+    class="process-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="process-box" *ngFor="let item of process" cdkDrag>
+      {{ item.title }}
+    </div>
+  </div>
+</div>
+
+<div class="done-container">
+  <h2>Complete</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="done"
+    [cdkDropListConnectedTo]="[todoList, processList]"
+    class="done-list"
+    (cdkDropListDropped)="drop($event)"
+  >
+    <div class="done-box" *ngFor="let item of done" cdkDrag>
+      {{ item.title }}
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HeaderComponent } from './Components/header/header.component';
 import { LoginComponent } from './Components/login/login.component';
@@ -17,7 +17,7 @@ import { appRouting } from './app.routing';
 import { MaterialAppModule } from '../ngmaterial.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './Components/loader/interceptor.service';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -29,19 +29,20 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner'
     CryptoComponent,
     ForbiddenComponent,
     TodoComponent,
-    RegistrationComponent
+    RegistrationComponent,
   ],
   imports: [
     appRouting,
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
     MaterialAppModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
   ],
   providers: [
-    AuthService, {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

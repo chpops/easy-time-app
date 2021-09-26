@@ -2,13 +2,12 @@ const { Router } = require('express');
 const router = Router();
 const User = require('../models/User');
 const Todo = require('../models/Todo');
-
 const jwt = require('jsonwebtoken');
 
 router.get('/', (req, res) => {
     setTimeout(() => {
       res.send('Hi! Your Backend Is UP Now! ^^ Good Luck! <3');
-    }, 2000);
+    }, 1500);
 });
 
 router.get('/todos', async (req, res) => {
@@ -20,11 +19,11 @@ router.get('/todos', async (req, res) => {
     }
     setTimeout(() => {
       return res.status(200).json({ todos });
-    }, 5000);
+    }, 2000);
   } else {
     setTimeout(() => {
       return res.status(404).send('Список Todo пустой!');
-    }, 3000);
+    }, 1000);
   }
 });
 
@@ -35,12 +34,12 @@ router.post('/login', async (req, res) => {
     if (!user) 
     setTimeout(() => {
       return res.status(404).send('Пользователь с таким почтовым адресом не найден! Попробуйте изменить email адрес.');
-    }, 2500);
+    }, 2000);
 
     if (user.password !== password) 
     setTimeout(() => {
       return res.status(401).send('Неправильный пароль! Попробуйте использовать другой пароль.');
-    }, 2500);
+    }, 1000);
 
 		const token = jwt.sign({_id: user._id, email: user.email, password: user.password, role: user.role }, '0!Wh1_JwH2o3z', {expiresIn: 60 * 60});
 
@@ -49,9 +48,9 @@ router.post('/login', async (req, res) => {
       return res.status(200).json({
         token: token
       });
-    }, 3000);
+    }, 1500);
     } else{
-      console.log('Непредвиденная ошибка при генерации JWT токена! Текущий токен: ' + token);
+      setTimeout(() => { console.log('Непредвиденная ошибка при генерации JWT токена! Текущий токен: ' + token), 700 });
     }
 });
 
@@ -62,7 +61,7 @@ router.post('/registration', async (req, res) => {
   if (user){
     setTimeout(() => {
       res.status(409).send('Такая электронная почта уже занята. Попробуйте использовать другой email адресс для регистрации!');
-    }, 2500);
+    }, 1000);
   } else{
       const user = new User({
         email: email,
@@ -78,7 +77,9 @@ router.post('/registration', async (req, res) => {
   }
   }
   else{
-    res.status(500).send('Подтверждение пароля отличается от пароля, попробуйте ещё раз');
+    setTimeout(() => {
+      res.status(500).send('Подтверждение пароля отличается от пароля, попробуйте ещё раз');
+    }, 700);
   }  
 })
 

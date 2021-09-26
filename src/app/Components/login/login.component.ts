@@ -63,4 +63,11 @@ export class LoginComponent implements OnInit {
       }
     )
   }
+
+  isControlInvalid(controlName: string): boolean {
+    const control = this.form.controls[controlName];
+    const result = control.invalid && control.touched;
+    
+     return result;
+    }
 }
